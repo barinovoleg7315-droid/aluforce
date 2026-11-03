@@ -2,571 +2,362 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Алюфорс. Алюминиевые и стеклянные конструкции в Ульяновске</title>
-<meta name="description" content="Алюфорс: алюминиевые и стеклянные конструкции в Ульяновске. Веранды, панорамное остекление, фасады, входные группы, перегородки. Свой цех, свои бригады, с 2012 года.">
-<meta name="theme-color" content="#111210">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Алюфорс — алюминиевые конструкции в Ульяновске: веранды, двери, перегородки, фасады</title>
+<meta name="description" content="Веранды, раздвижные двери, перегородки, входные группы и фасады из алюминия в Ульяновске. Собственное производство, монтаж от 3 дней, гарантия 10 лет.">
+<meta property="og:title" content="Алюфорс — алюминий и стекло в Ульяновске">
+<meta property="og:description" content="Собственное производство. Монтаж от 3 дней. Гарантия 10 лет и сервис после неё.">
+<meta property="og:image" content="img/r-showroom.webp">
+<meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700&family=Onest:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/style.css">
-<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 
-<header class="hdr">
+<header class="hdr" id="hdr">
   <div class="wrap hdr-in">
-    <a class="logo" href="#home" aria-label="Алюфорс, на главную"><img src="img/logo-light.png" alt="алюфорс. алюминиевые технологии" width="140" height="46"></a>
-    <nav class="nav" id="nav" aria-label="Разделы сайта">
-      <a href="#dom" data-nav="dom">Для дома</a>
-      <a href="#biznes" data-nav="biznes">Для бизнеса</a>
-      <a href="#partneram" data-nav="partneram">Партнёрам</a>
-      <a href="#home" data-go="home#home-works">Работы</a>
-      <a href="#o-nas" data-nav="o-nas">О нас</a>
+    <a class="logo" href="#home" data-go="home" aria-label="Алюфорс, на главную"><img src="img/logo-dark.png" alt="алюфорс" width="122" height="40"></a>
+    <nav class="nav" id="nav" aria-label="Разделы">
+      <a href="#dom" data-go="dom">Для дома</a>
+      <a href="#biznes" data-go="biznes">Для бизнеса</a>
+      <a href="#partneram" data-go="partneram">Партнёрам</a>
+      <a href="#raboty" data-go="raboty">Работы</a>
+      <a href="#kontakty" data-scroll="kontakty">Контакты</a>
+      <a class="nav-tel" href="tel:+79372760726">+7 (937) 276-07-26</a>
     </nav>
-    <div class="hdr-act">
-      <span class="hdr-phone">+7 (937) 276-07-26</span>
-      <button class="btn btn-accent btn-sm" type="button" data-go="@kviz">Получить каталог</button>
-      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
-    </div>
+    <a class="hdr-tel" href="tel:+79372760726">+7 (937) 276-07-26</a>
+    <a class="btn btn-sm hdr-cta" href="#form" data-scroll="form">Рассчитать проект</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </div>
 </header>
 
-<main id="pages">
+<main id="main">
 
 <!-- ================= ГЛАВНАЯ ================= -->
-<section class="page" data-page="home" data-title="Алюфорс. Алюминиевые и стеклянные конструкции в Ульяновске">
-
-  <section class="hero3d" aria-label="Первый экран">
-    <div class="h3-stage">
-      <canvas id="hero-canvas" aria-hidden="true"></canvas>
-      <img class="h3-fallback" src="img/n-veranda-greybrick.webp" alt="Веранда частного дома с панорамным остеклением в графитовом профиле">
-    </div>
-    <div class="wrap h3-grid">
-      <div class="h3-txt">
-        <h1>Алюминиевые и стеклянные конструкции для дома и бизнеса</h1>
-        <p class="lead">Проектируем, производим в своём цехе и монтируем своими бригадами. Ульяновск и область, с 2012 года.</p>
+<section class="page" data-page="home" data-title="Алюфорс — алюминиевые конструкции в Ульяновске">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-txt rv">
+        <p class="eyebrow">Ульяновск · собственное производство</p>
+        <h1>Алюминий и стекло для дома и бизнеса</h1>
+        <p class="lead">Веранды, раздвижные двери, перегородки, входные группы и фасады. Делаем сами — от эскиза до монтажа.</p>
         <div class="btns">
-          <button class="btn btn-accent" type="button" data-go="home#home-dirs">Выбрать направление</button>
-          <button class="btn btn-line-light" type="button" data-go="home#home-works">Смотреть работы</button>
+          <a class="btn" href="#form" data-scroll="form">Рассчитать мой проект</a>
+          <a class="btn btn-line" href="#raboty" data-go="raboty">Смотреть работы</a>
         </div>
       </div>
-      <div class="h3-caps" aria-live="polite">
-        <div class="h3-cap on" data-stage><b>Алюминиевый профиль</b><span>Режем и собираем в своём цехе в Ульяновске</span></div>
-        <div class="h3-cap" data-stage><b>Терморазрыв</b><span>Тёплый профиль не промерзает и не копит конденсат</span></div>
-        <div class="h3-cap" data-stage><b>Стеклопакет и уплотнители</b><span>Стекло встаёт в паз и прижимается по контуру</span></div>
-        <div class="h3-cap" data-stage><b>Готовая конструкция</b><span>Монтируем своими бригадами и отвечаем за результат</span></div>
-        <ol class="h3-ticks" aria-hidden="true"><li data-tick class="on">Профиль</li><li data-tick>Терморазрыв</li><li data-tick>Стекло</li><li data-tick>Монтаж</li></ol>
-      </div>
+      <figure class="hero-img rv">
+        <img src="img/r-showroom.webp" alt="Салон Алюфорс в ТЦ «Созидатель»" width="1280" height="960" fetchpriority="high">
+        <figcaption>Наш салон в ТЦ «Созидатель». Приходите потрогать профиль и стекло вживую.</figcaption>
+      </figure>
     </div>
   </section>
 
-  <div class="facts-band">
-    <div class="wrap facts">
-      <div><b>2012</b><span>работаем с этого года</span></div>
-      <div><b>1720</b><span>конструкций изготовили и установили</span></div>
-      <div><b>Свой цех</b><span>режем и собираем в Ульяновске</span></div>
-      <div><b>Свои бригады</b><span>монтаж без перепродажи подряда</span></div>
-    </div>
-  </div>
-
-  <section class="sec" id="home-dirs">
-    <div class="wrap rv">
-      <h2>Что вам нужно сделать?</h2>
-      <p class="sub">Выберите, для чего конструкция. Покажем решения, цены и работы именно под вашу задачу.</p>
-    </div>
-    <div class="panels">
-      <article class="panel">
-        <img src="img/n-pavilion.webp" alt="Остеклённый павильон частного дома" loading="lazy">
-        <div class="panel-b">
-          <p class="panel-k">Для дома</p>
-          <h3>Веранды, панорамные окна, двери, перегородки</h3>
-          <ul class="links" data-render="route-links" data-seg="dom"></ul>
-          <a class="btn btn-light" href="#dom">Решения для дома</a>
-        </div>
-      </article>
-      <article class="panel">
-        <img src="img/n-facade-brown.webp" alt="Витражи торгового здания в графитовом профиле" loading="lazy">
-        <div class="panel-b">
-          <p class="panel-k">Для бизнеса</p>
-          <h3>Фасады, входные группы, тамбуры, офисные перегородки</h3>
-          <ul class="links" data-render="route-links" data-seg="biz"></ul>
-          <a class="btn btn-light" href="#biznes">Решения для бизнеса</a>
-        </div>
-      </article>
-    </div>
-    <div class="wrap">
-      <p class="route-partner">Дизайнер, архитектор или застройщик? <a href="#partneram">Условия для партнёров</a></p>
-      <div class="soft rv">
-        <div class="soft-txt"><h3>Не знаете, как называется конструкция?</h3><p>Пришлите фото проёма в мессенджер. Подскажем решение и вилку цены.</p></div>
-        <form class="lead-form" data-src="Главная: подсказка по фото" novalidate>
-          <div class="fld"><label for="lf-h1-ph">Телефон</label><input id="lf-h1-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
-          <div class="fld"><label for="lf-h1-ch">Куда написать</label><select id="lf-h1-ch" name="channel"><option>Telegram</option><option>MAX</option><option>WhatsApp</option><option>Позвонить</option></select></div>
-          <button class="btn" type="submit">Получить подсказку</button>
-          <label class="consent"><input type="checkbox" name="consent"> Согласен на обработку данных по <a href="#politika">политике</a></label>
-          <p class="form-msg" role="status"></p>
-        </form>
-      </div>
+  <section class="facts">
+    <div class="wrap facts-in">
+      <div class="fact rv"><b>3 144</b><span>конструкции уже стоят у клиентов</span></div>
+      <div class="fact rv"><b>от 3 дней</b><span>изготовление и монтаж</span></div>
+      <div class="fact rv"><b>10 лет</b><span>гарантии, потом — сервис</span></div>
+      <div class="fact rv"><b>до 3 дней</b><span>выезд сервиса, часто в день обращения</span></div>
     </div>
   </section>
 
-  <section class="sec sec-grey" id="home-prices">
+  <section class="sec">
     <div class="wrap">
       <div class="sec-head rv">
-        <h2>Сколько это стоит</h2>
-        <div class="tabs" role="tablist" aria-label="Направление">
-          <button role="tab" aria-selected="true" data-tab="dom" type="button">Для дома</button>
-          <button role="tab" aria-selected="false" data-tab="biz" type="button">Для бизнеса</button>
-        </div>
+        <h2>Что вам нужно?</h2>
+        <p class="sub">Для дома и для бизнеса — разные задачи, цены и документы. Выберите свой раздел.</p>
       </div>
-      <div class="prices" data-render="prices" data-seg="dom"></div>
-      <div class="note-row">
-        <p>Цена зависит от размеров, профиля (тёплый или холодный), стекла, фурнитуры и сложности монтажа. Точную называем после замера и фиксируем в договоре.</p>
-        <button class="btn" type="button" data-go="home#home-kviz">Рассчитать мой объект</button>
+      <div class="routes">
+        <a class="route rv" href="#dom" data-go="dom">
+          <div class="route-img"><img src="img/n-veranda-greybrick.webp" alt="Остеклённая веранда частного дома" loading="lazy" decoding="async"></div>
+          <div class="route-txt"><h3>Для дома</h3><p>Веранды, раздвижные двери, перегородки, входные двери, душевые</p><span class="more">Варианты и цены</span></div>
+        </a>
+        <a class="route rv" href="#biznes" data-go="biznes">
+          <div class="route-img"><img src="img/n-omoda.webp" alt="Фасад автосалона OMODA" loading="lazy" decoding="async"></div>
+          <div class="route-txt"><h3>Для бизнеса</h3><p>Фасады, входные группы, тамбуры, офисные перегородки. С НДС и документами</p><span class="more">Направления и объекты</span></div>
+        </a>
       </div>
+      <a class="partner-link rv" href="#partneram" data-go="partneram"><span>Вы оконная компания или дизайнер интерьеров?</span><b>Условия для партнёров</b></a>
     </div>
   </section>
 
-  <section class="sec" id="home-works">
+  <section class="sec sec-grey">
     <div class="wrap">
-      <div class="sec-head rv">
-        <div><h2>Сделано в Ульяновске и области</h2><p class="sub">Реальные объекты. Нажмите на фото, чтобы посмотреть подробнее.</p></div>
-        <div class="rail-nav"><button class="sq" type="button" data-rail="prev" aria-label="Назад">←</button><button class="sq" type="button" data-rail="next" aria-label="Вперёд">→</button></div>
+      <div class="sec-head row rv">
+        <div><h2>3 144 конструкции. Вот несколько</h2><p class="sub">Нажмите на фото — покажем, что именно сделали.</p></div>
+        <a class="btn btn-line" href="#raboty" data-go="raboty">Все работы</a>
       </div>
-      <div class="filters" data-filters="home"></div>
-      <div class="cases rail" data-render="cases" data-scope="featured"></div>
-      <div class="more-row">
-        <a class="btn btn-line" href="https://pin.it/26UtCLS7i" target="_blank" rel="noopener">Больше работ в Pinterest</a>
-      </div>
-      <div class="soft rv">
-        <div class="soft-txt"><h3>Похожая задача?</h3><p>Покажем ещё объекты с таким решением и прикинем цену для вашего.</p></div>
-        <form class="lead-form" data-src="Главная: похожая задача" novalidate>
-          <div class="fld"><label for="lf-h2-ph">Телефон</label><input id="lf-h2-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
-          <div class="fld"><label for="lf-h2-tx">Что нужно</label><input id="lf-h2-tx" name="comment" type="text" placeholder="Например, веранда 6 метров"></div>
-          <button class="btn" type="submit">Показать похожие</button>
-          <label class="consent"><input type="checkbox" name="consent"> Согласен на обработку данных по <a href="#politika">политике</a></label>
-          <p class="form-msg" role="status"></p>
-        </form>
+      <div class="works" data-works="home"></div>
+    </div>
+  </section>
+
+  <section class="sec" data-compare></section>
+
+  <section class="sec sec-grey">
+    <div class="wrap salon">
+      <div class="salon-img rv"><img src="img/office-desk.webp" alt="Офис Алюфорс в ТЦ «Созидатель»" loading="lazy" decoding="async"></div>
+      <div class="salon-txt rv">
+        <h2>Приходите в салон</h2>
+        <p class="sub">Покажем образцы профиля и стекла в разрезе и объясним, чем тёплый отличается от холодного. Можно просто прийти и посмотреть — без спешки и навязывания.</p>
+        <p class="addr">Ульяновск, проспект Созидателей, 116, ТЦ «Созидатель»</p>
+        <div class="btns">
+          <a class="btn" href="tel:+79372760726">Позвонить</a>
+          <a class="btn btn-line" href="https://yandex.ru/maps/?text=%D0%A3%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%A1%D0%BE%D0%B7%D0%B8%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%2C%20116" target="_blank" rel="noopener">Как добраться</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="sec sec-dark" id="home-kviz">
-    <div class="wrap kviz-wrap">
-      <div class="kviz-aside rv">
-        <h2>Подберём решение и пришлём каталог</h2>
-        <p class="sub">Четыре вопроса. Пришлём каталог под вашу задачу, а менеджер объяснит нюансы и посчитает варианты.</p>
-        <div class="catalogs" aria-hidden="true">
-          <div class="cat"><img src="img/r-fluted-sliding.webp" alt=""><span>Цвета и дизайны</span><small>Для дома</small></div>
-          <div class="cat"><img src="img/r-store-tambour.webp" alt=""><span>Каталог конструкций</span><small>Для бизнеса</small></div>
-          <div class="cat"><img src="img/r-hammam.webp" alt=""><span>Решения и узлы</span><small>Для партнёров</small></div>
-        </div>
-      </div>
-      <div class="kviz" data-quiz="main"></div>
-    </div>
-  </section>
+  <section class="sec" data-form="main"></section>
 </section>
 
 <!-- ================= ДЛЯ ДОМА ================= -->
-<section class="page" data-page="dom" data-title="Алюфорс для дома: веранды, двери, перегородки, душевые" hidden>
+<section class="page" data-page="dom" data-title="Алюминиевые веранды, перегородки и двери для дома — Алюфорс" hidden>
   <section class="hero">
-    <img class="hero-bg" src="img/n-veranda-greybrick.webp" alt="Веранда у дома с панорамным остеклением">
-    <div class="wrap hero-in">
-      <p class="eyebrow">Для дома и квартиры</p>
-      <h1>Больше света и простора в доме</h1>
-      <p class="lead">Веранды, панорамное остекление, входные двери, перегородки и душевые по вашим размерам. Делаем сами, от замера до монтажа.</p>
-      <div class="btns">
-        <button class="btn btn-accent" type="button" data-go="dom#dom-kviz">Подобрать решение</button>
-        <button class="btn btn-line-light" type="button" data-go="dom#dom-works">Смотреть работы</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="dom-solutions">
-    <div class="wrap">
-      <div class="rv"><h2>Что можно сделать</h2><p class="sub">Решения, которые мы уже делали в домах и квартирах Ульяновска.</p></div>
-      <div data-render="dirs" data-seg="dom"></div>
-      <div class="soft rv">
-        <div class="soft-txt"><h3>Пришлите фото дома или проёма</h3><p>Подскажем систему и вилку цены. Обычно хватает двух фото и примерных размеров.</p></div>
-        <form class="lead-form" data-src="Дом: фото проёма" novalidate>
-          <div class="fld"><label for="lf-d1-ph">Телефон</label><input id="lf-d1-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
-          <div class="fld"><label for="lf-d1-ch">Куда написать</label><select id="lf-d1-ch" name="channel"><option>Telegram</option><option>MAX</option><option>WhatsApp</option><option>Позвонить</option></select></div>
-          <button class="btn" type="submit">Отправить фото</button>
-          <label class="consent"><input type="checkbox" name="consent"> Согласен на обработку данных по <a href="#politika">политике</a></label>
-          <p class="form-msg" role="status"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec sec-grey" id="dom-prices">
-    <div class="wrap">
-      <div class="rv"><h2>Сколько стоит в реальных размерах</h2><p class="sub">Четыре типовых примера по минимальной цене за метр, чтобы был понятен порядок суммы.</p></div>
-      <div class="examples" data-render="examples"></div>
-      <div class="factors">
-        <h3>От чего зависит итоговая цена</h3>
-        <ul>
-          <li><b>Профиль.</b> Холодный дешевле, тёплый с терморазрывом нужен там, где зимой тепло.</li>
-          <li><b>Стекло.</b> Обычное, закалённое, триплекс, матовое или тонированное.</li>
-          <li><b>Открывание.</b> Глухие, распашные, раздвижные или складные створки.</li>
-          <li><b>Цвет.</b> Стандартные цвета или любой RAL, имитация дерева.</li>
-          <li><b>Монтаж.</b> Этаж, доступ, демонтаж старой конструкции.</li>
-        </ul>
-        <button class="btn" type="button" data-go="dom#dom-kviz">Узнать точную цену</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="dom-colors">
-    <div class="wrap split">
-      <div class="rv">
-        <h2>Выберите, как это будет выглядеть</h2>
-        <p class="sub">Цвет профиля, стекло и фурнитуру подбираем под фасад и интерьер. Образцы покажем в шоуруме на проспекте Созидателей.</p>
-        <div class="swatches" aria-label="Цвета профиля">
-          <div><i style="background:#383E42"></i>Антрацит</div><div><i style="background:#141414"></i>Чёрный</div><div><i style="background:#F4F4F0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)"></i>Белый</div>
-          <div><i style="background:#4A3A33"></i>Коричневый</div><div><i style="background:linear-gradient(135deg,#D0D3D5,#8E9193)"></i>Серебро</div><div><i style="background:#8B2E2E"></i>Любой RAL</div>
+    <div class="wrap hero-grid">
+      <div class="hero-txt rv">
+        <p class="eyebrow">Для дома</p>
+        <h1>Веранда, перегородка или дверь — под ваш размер</h1>
+        <p class="lead">Делаем из алюминия на собственном производстве. Монтаж от 3 дней, гарантия 10 лет.</p>
+        <div class="btns">
+          <a class="btn" href="#form" data-scroll="form">Рассчитать мой проект</a>
+          <a class="btn btn-line" href="#dom-dirs" data-scroll="dom-dirs">Варианты и цены</a>
         </div>
-        <form class="lead-form lead-inline" data-src="Дом: каталог цветов" novalidate>
-          <div class="fld"><label for="lf-d2-ph">Телефон</label><input id="lf-d2-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
-          <div class="fld"><label for="lf-d2-ch">Куда прислать</label><select id="lf-d2-ch" name="channel"><option>Telegram</option><option>MAX</option><option>WhatsApp</option><option>E-mail</option></select></div>
-          <button class="btn" type="submit">Получить каталог цветов</button>
-          <label class="consent"><input type="checkbox" name="consent"> Согласен на обработку данных по <a href="#politika">политике</a></label>
-          <p class="form-msg" role="status"></p>
-        </form>
       </div>
-      <div class="glass-samples">
-        <figure><img src="img/r-terrace-door.webp" alt="Прозрачное стекло" loading="lazy"><figcaption>Прозрачное</figcaption></figure>
-        <figure><img src="img/n-sliding-dark.webp" alt="Матовое стекло" loading="lazy"><figcaption>Матовое</figcaption></figure>
-        <figure><img src="img/r-fluted-sliding.webp" alt="Рифлёное стекло" loading="lazy"><figcaption>Рифлёное</figcaption></figure>
-        <figure><img src="img/r-sauna-home.webp" alt="Тонированное стекло" loading="lazy"><figcaption>Тонированное</figcaption></figure>
-      </div>
+      <figure class="hero-img rv"><img src="img/n-veranda-greybrick.webp" alt="Остеклённая веранда у кирпичного дома" fetchpriority="high"></figure>
     </div>
   </section>
 
-  <section class="sec sec-grey" id="dom-works">
+  <section class="sec" id="dom-dirs">
     <div class="wrap">
-      <div class="rv"><h2>Работы для дома</h2><p class="sub">Частные дома, квартиры и бани в Ульяновске и области.</p></div>
-      <div class="cases grid" data-render="cases" data-scope="dom" data-limit="9"></div>
-      <div class="more-row"><button class="btn btn-line" type="button" data-more>Показать ещё</button></div>
+      <div class="sec-head rv">
+        <h2>Что можно сделать и сколько это стоит</h2>
+        <p class="sub">Цена «от» — за квадратный метр конструкции. Почему у вас может выйти иначе — ниже.</p>
+      </div>
+      <div class="dirs" data-dirs="dom"></div>
     </div>
   </section>
 
-  <section class="sec" id="dom-steps">
+  <section class="sec sec-grey" data-price></section>
+
+  <section class="sec">
     <div class="wrap">
-      <div class="rv"><h2>Как мы работаем</h2><p class="sub">Шесть шагов от первого сообщения до готовой конструкции.</p></div>
-      <ol class="steps">
-        <li><b>Пишете или звоните</b><span>Присылаете задачу и фото. Отправляем каталог решений.</span></li>
-        <li><b>Считаем варианты</b><span>Менеджер объясняет разницу систем и называет вилку цены.</span></li>
-        <li><b>Замер и образцы</b><span>Приезжаем на объект, показываем образцы профиля и стекла.</span></li>
-        <li><b>Договор</b><span>Состав конструкции, цена и сроки на бумаге.</span></li>
-        <li><b>Производство и монтаж</b><span>Делаем в своём цехе, ставим своей бригадой.</span></li>
-        <li><b>На связи после</b><span>Регулировка, сервис и ответы на вопросы после монтажа.</span></li>
-      </ol>
-      <div class="soft rv">
-        <div class="soft-txt"><h3>Начнём с первого шага</h3><p>Оставьте телефон, менеджер напишет в удобный мессенджер и пришлёт каталог.</p></div>
-        <form class="lead-form" data-src="Дом: первый шаг" novalidate>
-          <div class="fld"><label for="lf-d3-ph">Телефон</label><input id="lf-d3-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
-          <div class="fld"><label for="lf-d3-nm">Имя</label><input id="lf-d3-nm" name="name" type="text" autocomplete="given-name" placeholder="Как к вам обращаться"></div>
-          <button class="btn" type="submit">Жду сообщения</button>
-          <label class="consent"><input type="checkbox" name="consent"> Согласен на обработку данных по <a href="#politika">политике</a></label>
-          <p class="form-msg" role="status"></p>
-        </form>
+      <div class="sec-head rv">
+        <h2>Как это выглядит у наших клиентов</h2>
+        <p class="sub">Реальные объекты в Ульяновске и области. Нажмите на фото — покажем подробности.</p>
+      </div>
+      <div class="chips" data-filter="dom"></div>
+      <div class="works" data-works="dom"></div>
+    </div>
+  </section>
+
+  <section class="sec sec-grey" data-compare></section>
+
+  <section class="sec">
+    <div class="wrap hands">
+      <div class="hands-img rv"><img src="img/docs-flatlay.webp" alt="Эскиз, смета, договор и гарантийный талон" loading="lazy" decoding="async"></div>
+      <div class="hands-txt">
+        <h2 class="rv">Что будет у вас на руках</h2>
+        <ol class="hands-list">
+          <li class="rv"><b>Эскиз с размерами</b><span>Ещё до договора видно, как будет выглядеть конструкция.</span></li>
+          <li class="rv"><b>Смета по позициям</b><span>Профиль, стекло, фурнитура и монтаж — отдельными строками. Без «прочих работ».</span></li>
+          <li class="rv"><b>Договор с ценой и сроком</b><span>Цена после подписания не меняется. Изготовление и монтаж — от 3 дней.</span></li>
+          <li class="rv"><b>Гарантия 10 лет</b><span>На конструкцию и монтаж, с гарантийным талоном.</span></li>
+          <li class="rv"><b>Сервис после гарантии</b><span>Отрегулируем створки, заменим уплотнитель или доводчик — через годы тоже.</span></li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <section class="sec sec-dark" id="dom-kviz">
-    <div class="wrap kviz-wrap">
-      <div class="kviz-aside rv">
-        <h2>Каталог цветов и дизайнов</h2>
-        <p class="sub">Четыре вопроса, и пришлём каталог, три похожих объекта и ориентир цены для вашей задачи.</p>
-        <div class="faq" data-render="faq" data-seg="dom"></div>
-      </div>
-      <div class="kviz" data-quiz="dom"></div>
-    </div>
-  </section>
+  <section class="sec sec-grey" data-form="dom"></section>
 </section>
 
 <!-- ================= ДЛЯ БИЗНЕСА ================= -->
-<section class="page page-dark" data-page="biznes" data-title="Алюфорс для бизнеса: фасады, входные группы, перегородки" hidden>
+<section class="page page-dark" data-page="biznes" data-title="Фасады, входные группы и перегородки для бизнеса — Алюфорс" hidden>
   <section class="hero">
-    <img class="hero-bg" src="img/n-omoda.webp" alt="Витражный фасад автосалона OMODA">
-    <div class="wrap hero-in">
-      <p class="eyebrow">Для бизнеса и коммерческих объектов</p>
-      <h1>Фасады, входные группы и перегородки под ключ</h1>
-      <p class="lead">Свой цех и монтажные бригады. Считаем по чертежам, работаем по договору с юрлицами, фиксируем сроки.</p>
-      <div class="btns">
-        <button class="btn btn-accent" type="button" data-go="biznes#biz-kviz">Отправить проект на расчёт</button>
-        <button class="btn btn-line-light" type="button" data-go="biznes#biz-works">Смотреть объекты</button>
+    <div class="wrap hero-grid">
+      <div class="hero-txt rv">
+        <p class="eyebrow">Для бизнеса</p>
+        <h1>Фасады, входы и перегородки для бизнеса</h1>
+        <p class="lead">Собственное производство, работа с НДС и закрывающими документами, сроки в договоре.</p>
+        <div class="btns">
+          <a class="btn btn-light" href="#form" data-scroll="form">Отправить проект на расчёт</a>
+          <a class="btn btn-line" href="#biz-works" data-scroll="biz-works">Наши объекты</a>
+        </div>
       </div>
+      <figure class="hero-img rv"><img src="img/n-omoda.webp" alt="Фасад и тамбур автосалона OMODA" fetchpriority="high"></figure>
     </div>
   </section>
-  <div class="clients-band">
-    <div class="wrap clients">
-      <span>Работали на объектах</span>
-      <ul><li>OMODA и JAECOO</li><li>Технониколь</li><li>Пятёрочка</li><li>Эфес</li><li>Росатом</li><li>Агророс банк</li><li>Этажи</li><li>ТЦ «Парус»</li><li>Аквапарк «Улёт»</li><li>Завод «Тракт»</li></ul>
-    </div>
-  </div>
 
-  <section class="sec" id="biz-solutions">
+  <section class="clients">
+    <div class="wrap clients-in rv">
+      <span>Работали для</span>
+      <b>OMODA</b><b>Технониколь</b><b>Пятёрочка</b><b>Росатом</b><b>Аквапарк «Улёт»</b><b>Эфес</b><b>Агророс банк</b>
+    </div>
+  </section>
+
+  <section class="sec">
     <div class="wrap">
-      <div class="rv"><h2>Что делаем для бизнеса</h2><p class="sub">Снаружи и внутри здания.</p></div>
-      <div data-render="dirs" data-seg="biz"></div>
-      <div class="soft rv">
-        <div class="soft-txt"><h3>Есть чертежи или ТЗ?</h3><p>Пришлите ссылку или опишите объект. Посчитаем по вашим данным и предложим систему.</p></div>
-        <form class="lead-form" data-src="Бизнес: расчёт по чертежам" novalidate>
-          <div class="fld"><label for="lf-b1-co">Компания</label><input id="lf-b1-co" name="company" type="text" autocomplete="organization" placeholder="Название"></div>
-          <div class="fld"><label for="lf-b1-ph">Телефон</label><input id="lf-b1-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
-          <div class="fld fld-wide"><label for="lf-b1-ln">Ссылка на проект или описание</label><input id="lf-b1-ln" name="comment" type="text" placeholder="Яндекс Диск, Google Диск или пара слов об объекте"></div>
-          <button class="btn btn-accent" type="submit">Отправить на расчёт</button>
-          <label class="consent"><input type="checkbox" name="consent"> Согласен на обработку данных по <a href="#politika">политике</a></label>
-          <p class="form-msg" role="status"></p>
-        </form>
+      <div class="sec-head rv">
+        <h2>Направления и цены за м²</h2>
+        <p class="sub">Точную стоимость считаем по чертежам или после замера. Расчёт бесплатный.</p>
       </div>
+      <div class="dirs" data-dirs="biz"></div>
     </div>
   </section>
 
-  <section class="sec sec-alt" id="biz-works">
+  <section class="sec sec-alt">
     <div class="wrap">
-      <div class="rv"><h2>Объекты</h2><p class="sub">Фасады, входы, офисы, производства и SPA. Нажмите на фото, чтобы посмотреть подробнее.</p></div>
-      <div class="filters" data-filters="biz"></div>
-      <div class="cases grid" data-render="cases" data-scope="biz" data-limit="9"></div>
-      <div class="more-row"><button class="btn btn-line" type="button" data-more>Показать ещё</button></div>
+      <div class="sec-head rv">
+        <h2>Чего боится заказчик — и что мы с этим делаем</h2>
+        <p class="sub">Пять вещей, из-за которых срываются открытия и бюджеты.</p>
+      </div>
+      <div class="risks">
+        <div class="risk rv"><p class="risk-q">Подрядчик сорвёт открытие</p><p class="risk-a">Сроки прописываем в договоре. Изготовление и монтаж — от 3 дней.</p></div>
+        <div class="risk rv"><p class="risk-q">Смета вырастет по ходу работ</p><p class="risk-a">Цену фиксируем в договоре после замера. Доплат «по факту» нет.</p></div>
+        <div class="risk rv"><p class="risk-q">Бухгалтерия не примет документы</p><p class="risk-a">Работаем с НДС. Даём полный пакет закрывающих документов.</p></div>
+        <div class="risk rv"><p class="risk-q">Дверь в ТЦ сломается в выходной</p><p class="risk-a">Сервис выезжает в день обращения или в течение 3 дней.</p></div>
+        <div class="risk rv"><p class="risk-q">Проектировщик, завод и монтажники валят друг на друга</p><p class="risk-a">Расчёт, производство, монтаж и сервис — одна компания. Отвечаем за всё.</p></div>
+      </div>
     </div>
   </section>
 
-  <section class="sec" id="biz-prices">
+  <section class="sec" id="biz-works">
     <div class="wrap">
-      <div class="rv"><h2>Ориентиры по ценам</h2><p class="sub">За квадратный метр конструкции. Смету по объекту составляем по чертежам или после замера.</p></div>
-      <div class="prices" data-render="prices" data-seg="biz"></div>
-      <div class="soft rv">
-        <div class="soft-txt"><h3>Нужна смета по объекту?</h3><p>Разложим по позициям: профиль, стекло, фурнитура, монтаж. Видно, за что платите.</p></div>
-        <form class="lead-form" data-src="Бизнес: смета" novalidate>
-          <div class="fld"><label for="lf-b2-co">Компания</label><input id="lf-b2-co" name="company" type="text" autocomplete="organization" placeholder="Название"></div>
-          <div class="fld"><label for="lf-b2-ph">Телефон</label><input id="lf-b2-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
-          <button class="btn btn-accent" type="submit">Получить смету</button>
-          <label class="consent"><input type="checkbox" name="consent"> Согласен на обработку данных по <a href="#politika">политике</a></label>
-          <p class="form-msg" role="status"></p>
-        </form>
+      <div class="sec-head row rv">
+        <div><h2>Объекты</h2><p class="sub">Нажмите на фото — покажем, что сделали.</p></div>
+        <a class="btn btn-line" href="#raboty" data-go="raboty">Все работы</a>
+      </div>
+      <div class="works" data-works="biz"></div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="wrap prod">
+      <div class="prod-txt rv">
+        <h2>Собственное производство</h2>
+        <p class="sub">Не перепродаём чужие конструкции, а делаем сами. Поэтому сроки зависят только от нас, а за качество и сервис отвечает тот, кто собирал.</p>
+        <ul class="ticks">
+          <li>Расчёт по вашим чертежам или после замера</li>
+          <li>Профиль в любой цвет по RAL под фирменный стиль</li>
+          <li>Монтаж своими бригадами, без субподряда</li>
+        </ul>
+      </div>
+      <div class="prod-imgs rv">
+        <img src="img/r-profiles.webp" alt="Алюминиевый профиль на производстве" loading="lazy" decoding="async">
+        <img src="img/r-worker.webp" alt="Сборка конструкции на производстве" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
 
-  <section class="sec sec-alt" id="biz-factory">
-    <div class="wrap">
-      <div class="rv"><h2>Не перепродаём. Делаем сами</h2><p class="sub">Режем профиль, собираем и остекляем конструкции в своём цехе в Ульяновске. Поэтому отвечаем и за узлы, и за сроки.</p></div>
-      <div class="bento">
-        <figure class="b-a"><img src="img/r-worker.webp" alt="Обработка алюминиевого профиля в цехе" loading="lazy"><figcaption>Обработка профиля</figcaption></figure>
-        <figure class="b-b"><img src="img/r-frame.webp" alt="Готовая рама в защитной плёнке" loading="lazy"><figcaption>Сборка рам</figcaption></figure>
-        <figure class="b-c"><img src="img/r-profiles.webp" alt="Склад алюминиевого профиля" loading="lazy"><figcaption>Склад профиля</figcaption></figure>
-        <div class="b-e"><ul class="ticks"><li>Профиль в любом цвете RAL и под дерево</li><li>Тёплые и холодные системы</li><li>Своя доставка и монтажные бригады</li><li>Противопожарные конструкции</li></ul></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="biz-steps">
-    <div class="wrap">
-      <div class="rv"><h2>Как ведём объект</h2><p class="sub">Один менеджер от расчёта до сдачи.</p></div>
-      <ol class="steps">
-        <li><b>ТЗ или чертёж</b><span>Присылаете проект, ведомость или описание задачи.</span></li>
-        <li><b>Выезд на объект</b><span>Смотрим проёмы, узлы примыкания, условия монтажа.</span></li>
-        <li><b>Расчёт и чертежи</b><span>Подбираем систему, готовим смету и рабочие чертежи.</span></li>
-        <li><b>Договор</b><span>Этапы, сроки и ответственность сторон.</span></li>
-        <li><b>Производство</b><span>Изготавливаем в своём цехе по согласованным чертежам.</span></li>
-        <li><b>Монтаж и сдача</b><span>Ставим своей бригадой, сдаём с закрывающими документами.</span></li>
-      </ol>
-      <div class="soft rv">
-        <div class="soft-txt"><h3>Обсудим сроки по вашему объекту</h3><p>Скажем, сколько займёт производство и монтаж и с какого этапа можно начинать.</p></div>
-        <form class="lead-form" data-src="Бизнес: сроки" novalidate>
-          <div class="fld"><label for="lf-b3-ph">Телефон</label><input id="lf-b3-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
-          <div class="fld"><label for="lf-b3-tx">Объект</label><input id="lf-b3-tx" name="comment" type="text" placeholder="Например, тамбур магазина"></div>
-          <button class="btn btn-accent" type="submit">Обсудить сроки</button>
-          <label class="consent"><input type="checkbox" name="consent"> Согласен на обработку данных по <a href="#politika">политике</a></label>
-          <p class="form-msg" role="status"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec sec-alt" id="biz-kviz">
-    <div class="wrap kviz-wrap">
-      <div class="kviz-aside rv">
-        <h2>Каталог конструкций для вашего объекта</h2>
-        <p class="sub">Четыре вопроса об объекте. Пришлём каталог, примеры похожих объектов и следующий шаг по расчёту.</p>
-        <div class="faq" data-render="faq" data-seg="biz"></div>
-      </div>
-      <div class="kviz" data-quiz="biz"></div>
-    </div>
-  </section>
+  <section class="sec" data-form="biz"></section>
 </section>
 
 <!-- ================= ПАРТНЁРАМ ================= -->
-<section class="page" data-page="partneram" data-title="Алюфорс для партнёров: дизайнерам, архитекторам, застройщикам" hidden>
-  <section class="hero">
-    <img class="hero-bg" src="img/r-hammam.webp" alt="Арочная стеклянная дверь хаммама">
-    <div class="wrap hero-in">
-      <p class="eyebrow">Дизайнерам, архитекторам, застройщикам</p>
-      <h1>Реализуем ваш проект в алюминии и стекле</h1>
-      <p class="lead">Подбор системы, расчёт по чертежам, производство и монтаж в одних руках. Вы отвечаете за идею, мы за то, чтобы она встала в проём.</p>
-      <div class="btns">
-        <button class="btn btn-accent" type="button" data-go="partneram#p-kviz">Получить каталог для партнёров</button>
-        <button class="btn btn-line-light" type="button" data-go="partneram#p-solutions">Сложные решения</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="p-get">
+<section class="page" data-page="partneram" data-title="Партнёрам: оконным компаниям и дизайнерам — Алюфорс" hidden>
+  <section class="hero hero-short">
     <div class="wrap">
-      <div class="rv"><h2>Что получает партнёр</h2></div>
-      <div class="benefits">
-        <div><h3>Подбор системы</h3><p>Предложим профиль и открывание под задачу, а не из короткого типового списка.</p></div>
-        <div><h3>Расчёт по чертежам</h3><p>Считаем по вашему проекту, раскладываем смету по позициям.</p></div>
-        <div><h3>Проработка узлов</h3><p>Покажем узлы примыкания до черновой отделки, чтобы проёмы подготовили правильно.</p></div>
-        <div><h3>Производство под проект</h3><p>Нестандартные формы, арки, раскладка, любой цвет RAL.</p></div>
-        <div><h3>Монтаж своими бригадами</h3><p>Отвечаем за результат на объекте, а не только за поставку.</p></div>
-        <div><h3>Один контакт</h3><p>Менеджер ведёт проект от расчёта до сдачи и держит вас в курсе.</p></div>
-      </div>
-      <h3 class="formats-h">Форматы работы</h3>
-      <div class="formats">
-        <div><b>Монтаж Алюфорс</b><span>Вы ведёте клиента, мы производим и монтируем под ваш проект.</span></div>
-        <div><b>Поставка</b><span>Изготавливаем конструкции, вы монтируете сами.</span></div>
-        <div><b>Под вашим брендом</b><span>Производим на базе Алюфорс под бренд партнёра.</span></div>
-      </div>
-      <div class="soft rv">
-        <div class="soft-txt"><h3>Расскажите, в каком проекте подключить Алюфорс</h3><p>Пришлите ссылку на проект или пару слов о задаче. Ответим с вариантами и сроками.</p></div>
-        <form class="lead-form" data-src="Партнёры: проект" novalidate>
-          <div class="fld"><label for="lf-p1-nm">Имя</label><input id="lf-p1-nm" name="name" type="text" autocomplete="name" placeholder="Имя"></div>
-          <div class="fld"><label for="lf-p1-ph">Телефон или e-mail</label><input id="lf-p1-ph" name="phone" type="text" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
-          <div class="fld fld-wide"><label for="lf-p1-ln">Проект</label><input id="lf-p1-ln" name="comment" type="text" placeholder="Ссылка или описание"></div>
-          <button class="btn" type="submit">Отправить запрос</button>
-          <label class="consent"><input type="checkbox" name="consent"> Согласен на обработку данных по <a href="#politika">политике</a></label>
-          <p class="form-msg" role="status"></p>
-        </form>
+      <div class="hero-txt rv">
+        <p class="eyebrow">Партнёрам</p>
+        <h1>Алюминий для ваших клиентов — без своего цеха</h1>
+        <p class="lead">Работаем с оконными компаниями и дизайнерами интерьеров. Вы ведёте клиента, мы делаем конструкцию.</p>
+        <div class="btns">
+          <a class="btn btn-line" href="#p-okna" data-scroll="p-okna">Оконным компаниям</a>
+          <a class="btn btn-line" href="#p-design" data-scroll="p-design">Дизайнерам</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="sec sec-grey" id="p-solutions">
+  <section class="sec sec-grey" id="p-okna">
     <div class="wrap">
-      <div class="rv"><h2>Решения для сложных проектов</h2><p class="sub">То, что обычно ищут дизайнеры и архитекторы. Всё на реальных объектах.</p></div>
-      <div class="solutions">
-        <figure><img src="img/r-hammam.webp" alt="Арочная стеклянная дверь" loading="lazy"><figcaption><b>Арки и нестандартные формы</b>Стекло по шаблону проёма, двери в арку.</figcaption></figure>
-        <figure><img src="img/n-attic.webp" alt="Перегородка по скату мансарды" loading="lazy"><figcaption><b>Перегородки по скату кровли</b>Раздвижные полотна в мансарде.</figcaption></figure>
-        <figure><img src="img/r-fluted-sliding.webp" alt="Перегородка с рифлёным стеклом" loading="lazy"><figcaption><b>Рифлёное и тонированное стекло</b>Свет проходит, приватность остаётся.</figcaption></figure>
-        <figure><img src="img/c-angar-1.webp" alt="Лофт-перегородка" loading="lazy"><figcaption><b>Лофт и раскладка</b>Тонкие чёрные линии по вашему эскизу.</figcaption></figure>
-        <figure><img src="img/n-pool.webp" alt="Безрамное стекло у купели" loading="lazy"><figcaption><b>Стекло в SPA</b>Ограждения купелей и бассейнов.</figcaption></figure>
-        <figure><img src="img/r-stairs.webp" alt="Стеклянное ограждение лестницы" loading="lazy"><figcaption><b>Стеклянные ограждения</b>Лестницы и второй свет без стоек.</figcaption></figure>
+      <p class="eyebrow rv">Оконным компаниям</p>
+      <div class="split">
+        <div class="split-img rv"><img src="img/partner-brand.webp" alt="Алюминиевый профиль с пустыми этикетками под бренд партнёра" loading="lazy" decoding="async"></div>
+        <div class="split-txt rv">
+          <h2>Добавьте алюминий в линейку — под своим брендом</h2>
+          <p class="sub">Клиент пришёл за пластиковыми окнами, а хочет ещё веранду или входную дверь. Не отдавайте его конкурентам. Мы изготовим конструкцию и промаркируем вашим брендом, вы продаёте как своё и по своей цене.</p>
+          <ul class="ticks">
+            <li>Веранды, раздвижные системы, двери, перегородки, витражи</li>
+            <li>Маркировка вашим брендом</li>
+            <li>Партнёрские цены и гарантия 10 лет</li>
+          </ul>
+        </div>
+      </div>
+      <div class="split split-rev">
+        <div class="split-img rv"><img src="img/n-facade-brown.webp" alt="Витражи и двери торгового здания" loading="lazy" decoding="async"></div>
+        <div class="split-txt rv">
+          <h2>Крупный объект? Возьмём часть или весь</h2>
+          <p class="sub">Тендер на торговый центр или завод, где нужен алюминий, — не повод отказываться. Закроем алюминиевую часть или объект целиком. Клиент остаётся вашим, мы работаем на вас.</p>
+          <ul class="ticks">
+            <li>Расчёт по чертежам</li>
+            <li>Работа с НДС и закрывающие документы</li>
+            <li>Монтаж своими бригадами</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="sec sec-dark" id="p-kviz">
-    <div class="wrap kviz-wrap">
-      <div class="kviz-aside rv">
-        <h2>Каталог для партнёров</h2>
-        <p class="sub">Три вопроса. Пришлём каталог конструкций и узлов, примеры решений и условия сотрудничества.</p>
+  <section class="sec" id="p-design">
+    <div class="wrap">
+      <p class="eyebrow rv">Дизайнерам интерьеров</p>
+      <div class="split">
+        <div class="split-img rv"><img src="img/partner-design.webp" alt="Стол дизайнера: 3D-визуализация перегородки, образцы цветов и стекла" loading="lazy" decoding="async"></div>
+        <div class="split-txt rv">
+          <h2>Чтобы перегородка в проекте выглядела так же, как в жизни</h2>
+          <ul class="ticks">
+            <li>Готовые 3D-модели наших систем для визуализаций</li>
+            <li>Образцы цветов профиля и стекла — в салоне или привезём</li>
+            <li>Инженер проверит, реализуемо ли решение, и приедет на объект</li>
+            <li>Цена и срок — до того, как вы покажете проект клиенту</li>
+          </ul>
+        </div>
       </div>
-      <div class="kviz" data-quiz="partner"></div>
+      <div class="earn rv">
+        <div class="earn-head">
+          <h2>Сколько вы заработаете</h2>
+          <p class="sub">Типичный заказ из дизайн-проекта — от 100 до 500 тысяч рублей. С каждого такого заказа вы получаете вознаграждение.</p>
+          <p class="earn-big">от 5&nbsp;000 до 50&nbsp;000&nbsp;₽</p>
+          <p class="muted small">Сумма зависит от заказа. Условия фиксируем в договоре.</p>
+        </div>
+        <div class="earn-ex">
+          <div><span>Перегородка в гостиную</span><b>≈ 100 000 ₽</b><em>5 000 – 10 000 ₽ вам</em></div>
+          <div><span>Душевая и двери в санузел</span><b>≈ 250 000 ₽</b><em>12 500 – 25 000 ₽ вам</em></div>
+          <div><span>Тёплое остекление террасы</span><b>≈ 500 000 ₽</b><em>25 000 – 50 000 ₽ вам</em></div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <section class="sec sec-grey" data-form="partner"></section>
 </section>
 
-<!-- ================= О НАС ================= -->
-<section class="page" data-page="o-nas" data-title="О компании Алюфорс" hidden>
-  <section class="hero">
-    <img class="hero-bg" src="img/r-showroom.webp" alt="Вход в шоурум Алюфорс">
-    <div class="wrap hero-in">
-      <p class="eyebrow">О компании</p>
-      <h1>Алюфорс. Алюминий и стекло с 2012 года</h1>
-      <p class="lead">Местный производитель и монтажник алюминиевых и светопрозрачных конструкций. Один партнёр вместо нескольких подрядчиков.</p>
-      <div class="btns">
-        <button class="btn btn-accent" type="button" data-go="o-nas#about-visit">Приехать в шоурум</button>
-        <button class="btn btn-line-light" type="button" data-go="o-nas#about-contacts">Контакты</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="about-visit">
+<!-- ================= РАБОТЫ ================= -->
+<section class="page" data-page="raboty" data-title="Работы Алюфорс — фото объектов" hidden>
+  <section class="hero hero-short">
     <div class="wrap">
-      <div class="facts facts-light">
-        <div><b>2012</b><span>работаем с этого года</span></div>
-        <div><b>1720</b><span>конструкций изготовили и установили</span></div>
-        <div><b>Свой цех</b><span>производство в Ульяновске</span></div>
-        <div><b>Ульяновск и область</b><span>выезжаем на замер и монтаж</span></div>
-      </div>
-      <div class="split visit">
-        <img src="img/r-office.webp" alt="Переговорная зона в шоуруме Алюфорс" loading="lazy">
-        <div>
-          <h2>Приезжайте посмотреть образцы</h2>
-          <p class="sub">В шоуруме стоят перегородки, раздвижной портал, двери и образцы стекла. Можно потрогать и сравнить.</p>
-          <form class="lead-form lead-inline" data-src="О нас: визит в шоурум" novalidate>
-            <div class="fld"><label for="lf-a1-ph">Телефон</label><input id="lf-a1-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
-            <div class="fld"><label for="lf-a1-dt">Когда удобно</label><input id="lf-a1-dt" name="comment" type="text" placeholder="Например, в субботу днём"></div>
-            <button class="btn" type="submit">Записаться на визит</button>
-            <label class="consent"><input type="checkbox" name="consent"> Согласен на обработку данных по <a href="#politika">политике</a></label>
-            <p class="form-msg" role="status"></p>
-          </form>
-        </div>
+      <div class="hero-txt rv">
+        <p class="eyebrow">Работы</p>
+        <h1>3 144 конструкции. Вот часть из них</h1>
+        <p class="lead">Дома, магазины, офисы, заводы и бани в Ульяновске и области.</p>
       </div>
     </div>
   </section>
-
-  <section class="sec sec-grey" id="about-process">
+  <section class="sec sec-top0">
     <div class="wrap">
-      <div class="rv"><h2>Как рождается конструкция</h2><p class="sub">Всё, что на фото, происходит у нас, без посредников между цехом и объектом.</p></div>
-      <ol class="path">
-        <li><img src="img/r-profiles.webp" alt="Стеллажи с профилем" loading="lazy"><b>Профиль</b><span>Храним профиль разных систем и цветов</span></li>
-        <li><img src="img/r-worker.webp" alt="Обработка профиля" loading="lazy"><b>Резка и обработка</b><span>Размеры по замеру, до миллиметра</span></li>
-        <li><img src="img/r-frame.webp" alt="Готовая рама" loading="lazy"><b>Сборка</b><span>Рамы, створки, фурнитура</span></li>
-        <li><img src="img/r-loading.webp" alt="Погрузка конструкций" loading="lazy"><b>Доставка</b><span>Своя логистика стекла и рам</span></li>
-        <li><img src="img/n-parus-lift.webp" alt="Монтаж на фасаде с автовышки" loading="lazy"><b>Монтаж</b><span>Свои бригады на объекте</span></li>
-      </ol>
+      <div class="chips" data-filter="all"></div>
+      <div class="works works-all" data-works="all"></div>
     </div>
   </section>
-
-  <section class="sec" id="about-standard">
-    <div class="wrap">
-      <div class="rv"><h2>Стандарт Алюфорс</h2></div>
-      <div class="standard">
-        <div><b>Понимание</b><span>Сначала разбираемся в задаче и контексте объекта.</span></div>
-        <div><b>Решение</b><span>Предлагаем систему и конфигурацию, которые подходят именно сюда.</span></div>
-        <div><b>Честность</b><span>Заранее говорим о технических ограничениях.</span></div>
-        <div><b>Результат</b><span>Доводим до аккуратного и точного монтажа.</span></div>
-      </div>
-      <div class="soft rv">
-        <div class="soft-txt"><h3>Написать руководителю</h3><p>Предложение, вопрос по объекту или замечание по работе. Читает руководитель компании.</p></div>
-        <form class="lead-form" data-src="О нас: письмо руководителю" novalidate>
-          <div class="fld"><label for="lf-a2-ph">Телефон</label><input id="lf-a2-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
-          <div class="fld"><label for="lf-a2-tx">Сообщение</label><input id="lf-a2-tx" name="comment" type="text" placeholder="Коротко о вопросе"></div>
-          <button class="btn" type="submit">Отправить</button>
-          <label class="consent"><input type="checkbox" name="consent"> Согласен на обработку данных по <a href="#politika">политике</a></label>
-          <p class="form-msg" role="status"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec sec-dark" id="about-contacts">
-    <div class="wrap split">
-      <div>
-        <h2>Контакты</h2>
-        <dl class="cdl">
-          <dt>Шоурум и офис</dt><dd>Ульяновск, проспект Созидателей, 116, ТЦ «Созидатель»</dd>
-          <dt>Телефоны</dt><dd><a href="tel:+79372760726">+7 (937) 276-07-26</a><br><a href="tel:+79278229763">+7 (927) 822-97-63</a></dd>
-          <dt>Почта</dt><dd>aluforceulsk@gmail.com</dd>
-        </dl>
-        <div class="btns">
-          <a class="btn btn-line-light" href="https://yandex.ru/maps/?text=%D0%A3%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%A1%D0%BE%D0%B7%D0%B8%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%2C%20116" target="_blank" rel="noopener">Яндекс Карты</a>
-          <a class="btn btn-line-light" href="https://2gis.ru/ulyanovsk/search/%D0%9F%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%A1%D0%BE%D0%B7%D0%B8%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%20116" target="_blank" rel="noopener">2ГИС</a>
-        </div>
-      </div>
-      <img src="img/r-partition.webp" alt="Образцы перегородок в шоуруме" loading="lazy">
-    </div>
-  </section>
+  <section class="sec sec-grey" data-form="main"></section>
 </section>
 
 <!-- ================= ПОЛИТИКА ================= -->
-<section class="page" data-page="politika" data-title="Политика обработки персональных данных" hidden>
+<section class="page" data-page="politika" data-title="Политика обработки персональных данных — Алюфорс" hidden>
   <section class="sec">
     <div class="wrap prose">
       <h1>Политика обработки персональных данных</h1>
@@ -574,7 +365,7 @@
       <h3>Какие данные мы получаем</h3>
       <p>Имя, телефон, адрес электронной почты, название компании и сведения об объекте, которые вы сами указываете в формах сайта.</p>
       <h3>Зачем</h3>
-      <p>Чтобы связаться с вами, отправить каталог и материалы, подготовить расчёт и договор. Данные не передаются третьим лицам, кроме случаев, предусмотренных законом.</p>
+      <p>Чтобы связаться с вами, подготовить расчёт и договор. Данные не передаются третьим лицам, кроме случаев, предусмотренных законом.</p>
       <h3>Как долго</h3>
       <p>До достижения цели обработки или до отзыва согласия. Отозвать согласие можно письмом на aluforceulsk@gmail.com.</p>
       <p class="muted">Реквизиты оператора персональных данных будут добавлены перед запуском сайта.</p>
@@ -584,39 +375,54 @@
 
 </main>
 
-<footer class="ftr">
-  <div class="wrap ftr-grid">
-    <div><img src="img/logo-light.png" alt="алюфорс" width="140" height="46"><p>Алюминиевые и стеклянные конструкции. Проектирование, производство, монтаж.</p></div>
-    <div><h4>Направления</h4><a href="#dom">Для дома</a><a href="#biznes">Для бизнеса</a><a href="#partneram">Партнёрам и дизайнерам</a><a href="#o-nas">О компании</a></div>
-    <div><h4>Контакты</h4><p>Ульяновск, проспект Созидателей, 116, ТЦ «Созидатель»</p><p><a href="tel:+79372760726">+7 (937) 276-07-26</a><br><a href="tel:+79278229763">+7 (927) 822-97-63</a></p><p>aluforceulsk@gmail.com</p></div>
-    <div><h4>Мы на картах</h4>
-      <a href="https://yandex.ru/maps/?text=%D0%A3%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%A1%D0%BE%D0%B7%D0%B8%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%2C%20116" target="_blank" rel="noopener">Яндекс Карты</a>
-      <a href="https://2gis.ru/ulyanovsk/search/%D0%9F%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%A1%D0%BE%D0%B7%D0%B8%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%20116" target="_blank" rel="noopener">2ГИС</a>
-      <a href="https://pin.it/26UtCLS7i" target="_blank" rel="noopener">Pinterest</a>
+<footer class="ftr" id="kontakty">
+  <div class="wrap ftr-in">
+    <div class="ftr-brand">
+      <img src="img/logo-light.png" alt="алюфорс" width="122" height="40">
+      <p>Алюминиевые конструкции для дома и бизнеса. Собственное производство в Ульяновске.</p>
+    </div>
+    <div>
+      <p class="ftr-h">Контакты</p>
+      <a href="tel:+79372760726">+7 (937) 276-07-26</a>
+      <a href="tel:+79278229763">+7 (927) 822-97-63</a>
+      <a href="mailto:aluforceulsk@gmail.com">aluforceulsk@gmail.com</a>
+    </div>
+    <div>
+      <p class="ftr-h">Салон</p>
+      <p>Ульяновск, проспект Созидателей, 116, ТЦ «Созидатель»</p>
+    </div>
+    <div>
+      <p class="ftr-h">Разделы</p>
+      <a href="#dom" data-go="dom">Для дома</a>
+      <a href="#biznes" data-go="biznes">Для бизнеса</a>
+      <a href="#partneram" data-go="partneram">Партнёрам</a>
+      <a href="#raboty" data-go="raboty">Работы</a>
     </div>
   </div>
-  <div class="wrap ftr-bottom"><span>© 2012–2026 Алюфорс</span><a href="#politika">Политика обработки данных</a></div>
+  <div class="wrap ftr-low"><span>© Алюфорс</span><a href="#politika" data-go="politika">Политика обработки персональных данных</a></div>
 </footer>
 
-<div class="mbar"><button class="btn btn-accent" type="button" data-go="@kviz">Получить каталог</button></div>
+<div class="mbar" id="mbar">
+  <a class="mbar-tel" href="tel:+79372760726" aria-label="Позвонить">Позвонить</a>
+  <a class="mbar-cta" href="#form" data-scroll="form">Рассчитать проект</a>
+</div>
 
-<dialog class="modal" id="caseModal" aria-labelledby="cm-title">
-  <div class="modal-in">
-    <button class="modal-x" type="button" aria-label="Закрыть" data-close>×</button>
-    <div class="cm-gal"><img id="cm-img" src="" alt=""><div class="cm-thumbs" id="cm-thumbs"></div></div>
-    <div class="cm-txt">
-      <p class="cm-type" id="cm-type"></p>
-      <h3 id="cm-title"></h3>
-      <ul class="ticks" id="cm-did"></ul>
-      <button class="btn btn-accent" type="button" id="cm-cta">Хочу похожее решение</button>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="m-t">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box">
+    <button class="modal-x" data-close aria-label="Закрыть">×</button>
+    <div class="modal-media"><img id="m-img" alt=""><div class="modal-thumbs" id="m-thumbs"></div></div>
+    <div class="modal-info">
+      <p class="eyebrow" id="m-type"></p>
+      <h3 id="m-t"></h3>
+      <ul class="ticks" id="m-did"></ul>
+      <a class="btn" href="#form" data-scroll="form" data-close>Хочу так же</a>
     </div>
   </div>
-</dialog>
+</div>
 
-<script src="vendor/gsap.min.js"></script>
-<script src="vendor/ScrollTrigger.min.js"></script>
 <script src="js/data.js"></script>
-<script src="js/app.js"></script>
-<script type="module" src="js/hero3d.js"></script>
+<script src="js/content.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>
