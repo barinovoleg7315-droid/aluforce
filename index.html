@@ -1,0 +1,1683 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Алюфорс: алюминиевые и стеклянные конструкции в Ульяновске. Веранды, панорамное остекление, входные группы, перегородки. Свой цех, свои бригады, с 2012 года.">
+<style>[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Алюфорс</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Onest:wght@400;500;600&display=swap&subset=cyrillic">
+<style>
+
+/* Layout: graphite header and footer frame every page; the brandbook rule "left: meaning and navigation, right: the object" drives every hero and split block. Home and partner pages are light (white + warm paper), the business page is graphite. Single fixed theme per page by design. */
+:root{
+  --graphite:#111210; --graphite-2:#1B1D1A; --paper:#F5F4EF; --white:#FFFFFF;
+  --sage:#5A735E; --sage-ink:#3F5143; --sage-tint:#E6ECE4;
+  --bg:#FFFFFF; --bg-alt:#F5F4EF; --fg:#111210; --muted:#5B6058; --line:rgba(17,18,16,.12);
+  --card:#FFFFFF; --accent-text:#46594A; --chip:#EEF1EC;
+  --f-display:"Montserrat","Segoe UI",Arial,sans-serif;
+  --f-body:"Onest","Segoe UI",Arial,sans-serif;
+  --r-card:16px; --r-img:12px; --wrap:1240px;
+  color-scheme:light;
+}
+body[data-page="biznes"]{
+  --bg:#111210; --bg-alt:#181A17; --fg:#F2F1EC; --muted:#A5AAA1; --line:rgba(242,241,236,.13);
+  --card:#1D1F1C; --accent-text:#A9C2AC; --chip:#262924; --sage-tint:#232822;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1rem/1.6 var(--f-body);-webkit-font-smoothing:antialiased;transition:background .25s}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-.015em}
+h1{font-size:clamp(2rem,1.25rem + 2.7vw,3.25rem);line-height:1.08;font-weight:700}
+h2{font-size:clamp(1.6rem,1.15rem + 1.6vw,2.35rem);line-height:1.15;font-weight:700}
+h3{font-size:1.15rem;line-height:1.3;font-weight:600}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:20px}
+.sec{padding-block:clamp(56px,7vw,96px)}
+.sec.alt{background:var(--bg-alt)}
+.sub{color:var(--muted);max-width:62ch;margin-top:12px;font-size:1.05rem}
+.lead{font-size:1.15rem;color:var(--muted);max-width:52ch;margin-top:18px}
+.eyebrow{font:600 .8rem/1 var(--f-display);text-transform:uppercase;letter-spacing:.12em;color:var(--accent-text);margin-bottom:16px}
+.muted{color:var(--muted)}
+.sel{user-select:all}
+:focus-visible{outline:3px solid var(--sage);outline-offset:3px;border-radius:6px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:52px;padding:0 26px;border-radius:999px;border:0;cursor:pointer;
+  font:600 .98rem/1.1 var(--f-display);text-decoration:none;white-space:nowrap;background:var(--sage);color:#fff;
+  box-shadow:0 3px 0 var(--sage-ink),0 10px 22px -10px rgba(17,18,16,.45);transition:transform .15s ease,box-shadow .15s ease,background .15s}
+.btn:hover{transform:translateY(-1px);background:#617C66}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--sage-ink)}
+.btn-ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px var(--fg)}
+.btn-ghost:hover{background:var(--chip)}
+.btn-ghost:active{box-shadow:inset 0 0 0 1.5px var(--fg)}
+.btn-light{background:var(--paper);color:var(--graphite);box-shadow:0 3px 0 #B9BBB2}
+.btn-light:hover{background:#fff}
+.btn-sm{min-height:42px;padding:0 18px;font-size:.88rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* Header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--graphite);color:var(--paper);border-bottom:1px solid rgba(245,244,239,.08)}
+.hdr-in{display:flex;align-items:center;gap:28px;height:70px}
+.logo img{height:40px;width:auto}
+.nav{display:flex;gap:26px;margin-inline:auto}
+.nav a{color:rgba(245,244,239,.78);text-decoration:none;font:500 .95rem var(--f-display);padding-block:8px;border-bottom:2px solid transparent}
+.nav a:hover{color:#fff}
+.nav a[aria-current="page"]{color:#fff;border-color:var(--sage)}
+.hdr-act{display:flex;align-items:center;gap:16px}
+.hdr-phone{font:600 .95rem var(--f-display);white-space:nowrap}
+.burger{display:none;width:44px;height:44px;border:0;background:transparent;cursor:pointer;flex-direction:column;justify-content:center;gap:6px;padding:10px}
+.burger span{display:block;height:2px;background:var(--paper);border-radius:2px}
+
+/* Hero */
+.hero{padding-block:clamp(36px,5vw,72px)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,4vw,64px);align-items:center}
+.hero-txt{min-width:0}
+.hero-fig{margin:0;position:relative}
+.hero-main{width:100%;aspect-ratio:4/4.3;object-fit:cover;border-radius:var(--r-card)}
+.hero-inset{position:absolute;left:-36px;bottom:-28px;width:38%;margin:0;background:var(--bg);padding:8px;border-radius:14px;box-shadow:0 18px 40px -18px rgba(17,18,16,.45)}
+.hero-inset img{aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+.hero-inset figcaption{font:500 .8rem var(--f-display);padding:8px 4px 2px;color:var(--muted)}
+
+/* Facts */
+.facts-band{background:var(--graphite);color:var(--paper)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.facts>div{padding:28px 24px;border-left:1px solid rgba(245,244,239,.12);display:flex;flex-direction:column;gap:6px}
+.facts>div:first-child{border-left:0;padding-left:0}
+.facts b{font:700 clamp(1.4rem,1rem + 1.2vw,2rem)/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.facts span{color:rgba(245,244,239,.7);font-size:.95rem}
+.facts-plain>div{border-color:var(--line)}
+.facts-plain span{color:var(--muted)}
+
+/* Routes */
+.routes{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
+.route{border-radius:var(--r-card);overflow:hidden;display:flex;flex-direction:column}
+.route-home{background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.route-biz{background:var(--graphite);color:var(--paper)}
+.route-img{display:block;overflow:hidden}
+.route-img img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s ease}
+.route:hover .route-img img{transform:scale(1.03)}
+.route-body{padding:26px;display:flex;flex-direction:column;gap:14px;flex:1}
+.route-body h3{font-size:1.5rem}
+.route-body h3 a{text-decoration:none}
+.route-body p{color:var(--muted)}
+.route-biz .route-body p{color:rgba(245,244,239,.72)}
+.route-body .btn{align-self:flex-start;margin-top:auto}
+.chips{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips a{display:inline-block;padding:8px 14px;border-radius:999px;background:var(--chip);text-decoration:none;font-size:.9rem;transition:background .15s}
+.chips a:hover{background:var(--sage-tint)}
+.route-biz .chips a{background:rgba(245,244,239,.09);color:var(--paper)}
+.route-biz .chips a:hover{background:rgba(245,244,239,.18)}
+.route-partner{margin-top:18px;color:var(--muted)}
+.route-partner a{color:var(--accent-text);font-weight:600}
+
+/* Soft lead */
+.soft{margin-top:44px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);gap:28px;align-items:center;padding:28px;border-radius:var(--r-card);background:var(--sage-tint)}
+.sec.alt .soft{background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.soft-txt{display:flex;flex-direction:column;gap:8px}
+.soft-txt p{color:var(--muted)}
+.soft-form{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}
+.soft-inline{grid-template-columns:1fr 1fr;margin-top:26px}
+.soft-inline .btn{grid-column:1/-1;justify-self:start}
+.fld{display:flex;flex-direction:column;gap:6px;min-width:0}
+.fld-wide{grid-column:1/-2}
+.fld label{font:500 .82rem var(--f-display);color:var(--muted)}
+.fld input,.fld select,.fld textarea{height:52px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);padding:0 14px;font:400 1rem var(--f-body);width:100%}
+.fld input::placeholder{color:#8A8F86}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--sage)}
+.fld input.err{border-color:#B3261E}
+.consent{grid-column:1/-1;display:flex;gap:8px;align-items:flex-start;font-size:.82rem;color:var(--muted);cursor:pointer}
+.consent input{margin-top:3px;accent-color:var(--sage)}
+.consent a{color:var(--accent-text)}
+.form-msg{grid-column:1/-1;font-size:.9rem;min-height:0}
+.form-msg.ok{color:var(--accent-text);font-weight:500}
+.form-msg.bad{color:#B3261E}
+body[data-page="biznes"] .form-msg.bad{color:#F2A49E}
+
+/* Tabs + prices */
+.tabs{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);margin-top:28px}
+.tabs button{border:0;background:transparent;padding:10px 20px;border-radius:999px;font:600 .9rem var(--f-display);cursor:pointer;color:var(--fg)}
+.tabs button[aria-selected="true"]{background:var(--graphite);color:var(--paper)}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.price{background:var(--card);border-radius:var(--r-card);overflow:hidden;box-shadow:inset 0 0 0 1px var(--line);display:grid;grid-template-columns:120px 1fr}
+.price img{width:100%;height:100%;object-fit:cover;min-height:130px}
+.price-b{padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.price-b h3{font-size:1rem}
+.price-b small{color:var(--muted);font-size:.85rem}
+.price-b .val{font:700 1.3rem var(--f-display);margin-top:auto;font-variant-numeric:tabular-nums}
+.price-b .val span{font:500 .85rem var(--f-body);color:var(--muted)}
+.price-note{margin-top:24px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.price-note p{max-width:70ch;color:var(--muted)}
+
+/* Directions (solutions) */
+.dir-group{margin-top:36px}
+.dir-group h3{font-size:1rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-text);margin-bottom:14px}
+.dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:16px}
+.dir{background:var(--card);border-radius:var(--r-card);overflow:hidden;box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;scroll-margin-top:90px}
+.dir img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.dir-b{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.dir-b h4{font:600 1.05rem/1.3 var(--f-display)}
+.dir-b p{color:var(--muted);font-size:.93rem}
+.dir-b .val{margin-top:auto;padding-top:8px;font:600 .95rem var(--f-display);color:var(--accent-text)}
+.dir-note{background:var(--graphite);color:var(--paper);border-radius:var(--r-card);padding:22px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+body[data-page="biznes"] .dir-note{background:var(--sage)}
+.dir-note p{color:rgba(245,244,239,.78);font-size:.93rem}
+.dir-note .btn{align-self:flex-start}
+.dir.flash{animation:flash 1.6s ease}
+@keyframes flash{0%,40%{box-shadow:inset 0 0 0 3px var(--sage)}100%{box-shadow:inset 0 0 0 1px var(--line)}}
+
+/* Examples */
+.examples{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+.ex{background:var(--card);border-radius:var(--r-card);overflow:hidden;box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column}
+.ex img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.ex-b{padding:16px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.ex dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.88rem}
+.ex dt{color:var(--muted)} .ex dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.ex .val{margin-top:auto;font:700 1.35rem var(--f-display);font-variant-numeric:tabular-nums}
+.factors{margin-top:28px;padding:26px;border-radius:var(--r-card);background:var(--bg-alt);display:grid;grid-template-columns:1fr auto;gap:12px 28px;align-items:end}
+.factors h3{grid-column:1/-1}
+.factors ul{margin:0;padding-left:18px;display:grid;grid-template-columns:1fr 1fr;gap:6px 28px;color:var(--muted)}
+.factors b{color:var(--fg);font-weight:600}
+
+/* Colors */
+.colors{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:center}
+.colors-txt{min-width:0}
+.swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.swatches div{display:flex;align-items:center;gap:10px;font-size:.92rem}
+.swatches i{width:40px;height:40px;border-radius:10px;flex:none}
+.glass-samples{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.glass-samples figure{margin:0;position:relative}
+.glass-samples img{aspect-ratio:3/4;object-fit:cover;border-radius:var(--r-img);width:100%}
+.glass-samples figcaption{font:600 .88rem var(--f-display);margin-top:8px}
+
+/* Cases */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.filters button{border:0;cursor:pointer;padding:9px 16px;border-radius:999px;background:var(--chip);color:var(--fg);font:500 .9rem var(--f-display)}
+.filters button[aria-pressed="true"]{background:var(--graphite);color:var(--paper)}
+body[data-page="biznes"] .filters button[aria-pressed="true"]{background:var(--paper);color:var(--graphite)}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.case{all:unset;cursor:pointer;display:flex;flex-direction:column;border-radius:var(--r-card);overflow:hidden;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);transition:transform .2s ease,box-shadow .2s}
+.case:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px var(--line),0 18px 36px -22px rgba(17,18,16,.5)}
+.case:focus-visible{outline:3px solid var(--sage);outline-offset:3px}
+.case-img{position:relative}
+.case-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.case-b{padding:16px 18px 18px;display:flex;flex-direction:column;gap:4px}
+.case-b h3{font-size:1.02rem}
+.case-b p{color:var(--muted);font-size:.9rem}
+.case-b .open{margin-top:8px;font:600 .85rem var(--f-display);color:var(--accent-text)}
+.more-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+/* Steps */
+.steps{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(6,1fr);gap:14px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:6px;padding-top:16px;border-top:2px solid var(--fg)}
+.steps li::before{content:counter(s);font:700 .85rem var(--f-display);color:var(--accent-text)}
+.steps b{font:600 1rem var(--f-display)}
+.steps span{color:var(--muted);font-size:.9rem}
+.steps-photos{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px;margin-top:30px}
+.steps-photos figure{margin:0}
+.steps-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-img)}
+.steps-photos figcaption{font:500 .85rem var(--f-display);color:var(--muted);margin-top:8px}
+
+/* Quiz */
+.kviz-wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,4vw,56px);align-items:start}
+.kviz-aside{min-width:0}
+.kviz{background:var(--card);border-radius:20px;padding:clamp(20px,3vw,32px);box-shadow:inset 0 0 0 1px var(--line),0 24px 50px -30px rgba(17,18,16,.45);min-width:0}
+body[data-page="biznes"] .kviz{background:#1F221E}
+.q-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font:500 .85rem var(--f-display);color:var(--muted)}
+.q-bar{height:4px;border-radius:4px;background:var(--line);margin-top:10px;overflow:hidden}
+.q-bar i{display:block;height:100%;background:var(--sage);transition:width .3s ease}
+.q-title{font:700 1.35rem/1.25 var(--f-display);margin-top:22px}
+.q-hint{color:var(--muted);font-size:.9rem;margin-top:6px}
+.q-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:18px}
+.q-opt{all:unset;cursor:pointer;border-radius:12px;box-shadow:inset 0 0 0 1.5px var(--line);overflow:hidden;display:flex;flex-direction:column;background:var(--bg);transition:box-shadow .15s}
+.q-opt img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.q-opt span{padding:12px;font:500 .92rem/1.3 var(--f-display);display:flex;gap:8px;align-items:flex-start}
+.q-opt span::before{content:"";flex:none;width:16px;height:16px;border-radius:5px;box-shadow:inset 0 0 0 1.5px var(--muted);margin-top:1px}
+.q-opt.single span::before{border-radius:50%}
+.q-opt[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--sage)}
+.q-opt[aria-pressed="true"] span::before{background:var(--sage);box-shadow:inset 0 0 0 3px var(--bg),inset 0 0 0 10px var(--sage)}
+.q-opt:focus-visible{outline:3px solid var(--sage);outline-offset:2px}
+.q-other{margin-top:12px}
+.q-nav{display:flex;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap}
+.q-err{color:#B3261E;font-size:.88rem;margin-top:10px;min-height:1.2em}
+body[data-page="biznes"] .q-err{color:#F2A49E}
+.q-gift{display:flex;gap:14px;align-items:center;padding:14px;border-radius:12px;background:var(--sage-tint);margin-top:18px}
+.q-gift img{width:64px;height:64px;object-fit:cover;border-radius:8px;flex:none}
+.q-gift p{font-size:.92rem}
+.q-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.q-form .fld-wide{grid-column:1/-1}
+.q-done{text-align:left;padding-block:12px}
+.q-done h3{font-size:1.4rem;margin-bottom:10px}
+.q-done p{color:var(--muted)}
+.catalogs{position:relative;height:300px;margin-top:34px;max-width:440px}
+.cat{position:absolute;width:56%;aspect-ratio:3/4;border-radius:10px;overflow:hidden;background:var(--graphite);color:var(--paper);box-shadow:0 22px 44px -22px rgba(17,18,16,.6);display:flex;flex-direction:column;justify-content:flex-end;padding:14px}
+.cat img{position:absolute;inset:0;width:100%;height:62%;object-fit:cover}
+.cat span,.cat small{position:relative;z-index:1}
+.cat span{font:700 .95rem/1.2 var(--f-display)}
+.cat small{color:rgba(245,244,239,.65);font-size:.75rem;margin-top:4px}
+.cat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--sage)}
+.cat-1{left:0;top:30px;transform:rotate(-5deg)}
+.cat-2{left:24%;top:6px;z-index:2}
+.cat-3{left:46%;top:36px;transform:rotate(5deg);z-index:1}
+.faq{margin-top:28px;display:flex;flex-direction:column;gap:8px}
+.faq details{background:var(--card);border-radius:12px;box-shadow:inset 0 0 0 1px var(--line);padding:0 18px}
+.faq summary{cursor:pointer;padding:16px 0;font:600 .98rem var(--f-display);list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";font-weight:500;color:var(--accent-text)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding-bottom:16px;color:var(--muted);font-size:.95rem}
+
+/* Business specifics */
+.clients-band{border-block:1px solid var(--line)}
+.clients{display:flex;align-items:center;gap:24px;padding-block:20px;flex-wrap:wrap}
+.clients-lbl{font:600 .8rem var(--f-display);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.clients ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 26px;font:600 1rem var(--f-display)}
+.bento{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;gap:14px;margin-top:30px}
+.bento figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r-card)}
+.bento img{width:100%;height:100%;object-fit:cover;min-height:220px}
+.bento figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 16px 12px;font:600 .9rem var(--f-display);color:#fff;background:linear-gradient(transparent,rgba(10,11,9,.7))}
+.b-a{grid-row:1/3}
+.b-e{grid-column:2/4;background:var(--card);border-radius:var(--r-card);padding:24px;box-shadow:inset 0 0 0 1px var(--line)}
+.bento .b-d{display:none}
+.ticks{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.ticks li{padding-left:28px;position:relative}
+.ticks li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:8px;border-left:2px solid var(--accent-text);border-bottom:2px solid var(--accent-text);transform:rotate(-45deg)}
+.b-e .ticks{grid-template-columns:1fr 1fr}
+
+/* Partners */
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.benefits div{background:var(--card);border-radius:var(--r-card);padding:22px;box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:8px}
+.benefits p{color:var(--muted);font-size:.95rem}
+.formats-h{margin-top:40px}
+.formats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.formats div{background:var(--graphite);color:var(--paper);border-radius:var(--r-card);padding:22px;display:flex;flex-direction:column;gap:8px}
+.formats b{font:600 1.1rem var(--f-display)}
+.formats span{color:rgba(245,244,239,.72);font-size:.95rem}
+.solutions{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.solutions figure{margin:0}
+.solutions img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-card)}
+.solutions figcaption{margin-top:12px;color:var(--muted);font-size:.93rem;display:flex;flex-direction:column;gap:4px}
+.solutions figcaption b{color:var(--fg);font:600 1.02rem var(--f-display)}
+
+/* About */
+.about-facts{display:flex;flex-direction:column;gap:40px}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);align-items:center}
+.visit img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-card)}
+.visit-txt{min-width:0;display:flex;flex-direction:column;gap:10px}
+.visit-txt>p{color:var(--muted)}
+.path{list-style:none;padding:0;margin:30px 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.path li{display:flex;flex-direction:column;gap:6px}
+.path img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r-img);margin-bottom:6px}
+.path b{font:600 1rem var(--f-display)}
+.path span{color:var(--muted);font-size:.88rem}
+.standard{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.standard div{display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:var(--r-card);background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.standard b{font:600 1.1rem var(--f-display)}
+.standard span{color:var(--muted);font-size:.95rem}
+.objects{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.objects li{padding:16px 18px;border-radius:12px;background:var(--bg-alt);font:600 .95rem var(--f-display)}
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.contacts>img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-card)}
+.cdl{margin:22px 0 0;display:grid;grid-template-columns:auto 1fr;gap:12px 24px}
+.cdl dt{color:var(--muted);font-size:.9rem}
+.cdl dd{margin:0;font:600 1rem/1.5 var(--f-display)}
+.cdl a{text-decoration:none}
+.prose{max-width:760px;display:flex;flex-direction:column;gap:14px}
+.prose h1{font-size:clamp(1.7rem,1.2rem + 1.6vw,2.4rem);margin-bottom:8px}
+.prose h3{margin-top:10px}
+
+/* Footer */
+.ftr{background:var(--graphite);color:var(--paper);padding-block:56px 28px}
+.ftr-grid{display:grid;grid-template-columns:1.3fr 1fr 1.2fr 1fr;gap:32px}
+.ftr-grid>div{display:flex;flex-direction:column;gap:10px;min-width:0}
+.ftr-brand img{height:40px;width:auto}
+.ftr p,.ftr a{color:rgba(245,244,239,.72);font-size:.93rem;text-decoration:none}
+.ftr a:hover{color:#fff}
+.ftr h4{font:600 .82rem var(--f-display);text-transform:uppercase;letter-spacing:.1em;color:rgba(245,244,239,.5);margin-bottom:4px}
+.ftr-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:40px;padding-top:20px;border-top:1px solid rgba(245,244,239,.1);font-size:.85rem;color:rgba(245,244,239,.5)}
+.ftr-bottom a{color:rgba(245,244,239,.6);text-decoration:none}
+
+/* Modal */
+.modal{border:0;padding:0;border-radius:20px;width:min(1040px,calc(100% - 32px));max-height:calc(100dvh - 40px);background:var(--card);color:var(--fg)}
+.modal::backdrop{background:rgba(10,11,9,.7)}
+.modal-in{display:grid;grid-template-columns:1.35fr 1fr;position:relative}
+.modal-x{position:absolute;right:12px;top:12px;width:44px;height:44px;border-radius:50%;border:0;background:var(--graphite);color:var(--paper);font-size:1.6rem;line-height:1;cursor:pointer;z-index:2}
+.cm-gal{background:#0C0D0B;display:flex;flex-direction:column;min-width:0}
+.cm-gal>img{width:100%;height:min(72dvh,620px);object-fit:contain}
+.cm-thumbs{display:flex;gap:8px;padding:10px;overflow-x:auto}
+.cm-thumbs button{all:unset;cursor:pointer;flex:none;width:64px;height:64px;border-radius:8px;overflow:hidden;opacity:.55;box-shadow:inset 0 0 0 2px transparent}
+.cm-thumbs button[aria-current="true"]{opacity:1;box-shadow:0 0 0 2px var(--sage)}
+.cm-thumbs img{width:100%;height:100%;object-fit:cover}
+.cm-txt{padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.cm-type{font:600 .8rem var(--f-display);text-transform:uppercase;letter-spacing:.1em;color:var(--accent-text)}
+.cm-txt h3{font-size:1.5rem}
+.cm-txt .btn{align-self:flex-start;margin-top:auto}
+
+.mbar{display:none}
+
+/* Responsive */
+@media (max-width:1100px){
+  .nav{gap:18px}
+  .hdr-phone{display:none}
+  .examples{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr);row-gap:24px}
+  .path{grid-template-columns:repeat(3,1fr)}
+  .price-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:920px){
+  .burger{display:flex}
+  .hdr-act .btn-sm{display:none}
+  .nav{position:fixed;left:0;right:0;top:calc(70px + env(safe-area-inset-top,0px));background:var(--graphite);flex-direction:column;gap:0;padding:8px 20px 20px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:.2s;margin:0;border-bottom:1px solid rgba(245,244,239,.1)}
+  .nav.open{opacity:1;transform:none;pointer-events:auto}
+  .nav a{padding:14px 0;font-size:1.05rem;border-bottom:1px solid rgba(245,244,239,.08)}
+  .hdr-in{justify-content:space-between}
+  .hero-grid,.routes,.kviz-wrap,.colors,.visit,.contacts,.soft{grid-template-columns:1fr}
+  .hero-fig{order:-1}
+  .hero-main{aspect-ratio:4/3}
+  .hero-inset{left:auto;right:12px;bottom:-24px;width:42%}
+  .hero-txt{padding-top:12px}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts>div{border-left:0;padding-left:0;border-top:1px solid rgba(245,244,239,.12)}
+  .facts-plain>div{border-top-color:var(--line)}
+  .facts>div:nth-child(-n+2){border-top:0}
+  .cases,.benefits,.formats,.solutions{grid-template-columns:1fr 1fr}
+  .standard,.objects{grid-template-columns:1fr 1fr}
+  .bento{grid-template-columns:1fr 1fr}
+  .b-a{grid-row:auto;grid-column:1/-1}
+  .b-e{grid-column:1/-1}
+  .bento .b-d{display:block}
+  .modal-in{grid-template-columns:1fr}
+  .cm-gal>img{height:46dvh}
+  .ftr-grid{grid-template-columns:1fr 1fr}
+  .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(17,18,16,.92);backdrop-filter:blur(8px)}
+  .mbar .btn{width:100%}
+  body{padding-bottom:76px}
+}
+@media (max-width:620px){
+  .wrap{padding-inline:16px}
+  .soft-form,.soft-inline,.q-form{grid-template-columns:1fr}
+  .fld-wide{grid-column:auto}
+  .soft-form .btn,.btns .btn{width:100%}
+  .soft{padding:20px}
+  .price-grid,.examples,.cases,.benefits,.formats,.solutions,.standard{grid-template-columns:1fr}
+  .steps,.path{grid-template-columns:1fr 1fr}
+  .factors{grid-template-columns:1fr}
+  .factors ul{grid-template-columns:1fr}
+  .b-e .ticks{grid-template-columns:1fr}
+  .swatches{grid-template-columns:1fr 1fr}
+  .catalogs{height:240px}
+  .ftr-grid{grid-template-columns:1fr}
+  .q-opts{grid-template-columns:1fr 1fr}
+  .cdl{grid-template-columns:1fr;gap:4px}
+  .cdl dd{margin-bottom:10px}
+  .hdr-in{height:62px}
+  .logo img{height:34px}
+  .nav{top:calc(62px + env(safe-area-inset-top,0px))}
+  .steps-photos{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* Grid items may shrink below their content width */
+.facts>*,.routes>*,.soft>*,.soft-form>*,.steps>*,.cases>*,.price-grid>*,.dir-grid>*,.examples>*,.benefits>*,.formats>*,.solutions>*,.standard>*,.objects>*,.path>*,.ftr-grid>*,.bento>*,.colors>*,.glass-samples>*,.kviz-wrap>*,.q-opts>*,.q-form>*,.hero-grid>*,.visit>*,.contacts>*,.steps-photos>*,.swatches>*{min-width:0}
+.steps b,.path b,.facts b,.standard b{hyphens:auto;overflow-wrap:anywhere}
+@media (max-width:620px){.btn{white-space:normal;text-align:center;min-height:52px;padding-block:12px}}
+#pages,.ftr{overflow-x:clip}
+.glass-samples{grid-template-columns:repeat(2,minmax(0,1fr))}
+.swatches{grid-template-columns:repeat(3,minmax(0,1fr))}
+.swatches div{min-width:0;overflow-wrap:anywhere}
+@media (max-width:1100px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:620px){.swatches,.steps,.path{grid-template-columns:repeat(2,minmax(0,1fr))}.cat{width:52%}.cat-3{left:44%}}
+.ftr-brand img{align-self:flex-start;height:40px;width:auto}
+.cat{width:50%}.cat-2{left:26%}.cat-3{left:50%}
+.dir-note-wide{margin-top:16px;flex-direction:row;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.dir-note-wide>div{display:flex;flex-direction:column;gap:6px;max-width:70ch}
+@media (max-width:920px){.mbar{transform:translateY(110%);transition:transform .25s}.mbar.on{transform:none}}
+
+</style>
+
+<header class="hdr" id="top">
+  <div class="wrap hdr-in">
+    <a class="logo" href="#home" aria-label="Алюфорс, на главную"><img src="img/logo-light.png" alt="алюфорс. алюминиевые технологии" width="146" height="48"></a>
+    <nav class="nav" id="nav" aria-label="Разделы сайта">
+      <a href="#dom" data-nav="dom">Для дома</a>
+      <a href="#biznes" data-nav="biznes">Для бизнеса</a>
+      <a href="#partneram" data-nav="partneram">Партнёрам</a>
+      <a href="#home" data-go="home#home-works" data-nav="works">Работы</a>
+      <a href="#o-nas" data-nav="o-nas">О нас</a>
+    </nav>
+    <div class="hdr-act">
+      <span class="hdr-phone">+7 (937) 276-07-26</span>
+      <button class="btn btn-sm" type="button" data-go="@kviz">Получить каталог</button>
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="pages">
+
+<!-- ================= ГЛАВНАЯ ================= -->
+<section class="page" data-page="home" data-title="Алюфорс. Алюминиевые и стеклянные конструкции в Ульяновске">
+
+  <div class="sec hero">
+    <div class="wrap hero-grid">
+      <div class="hero-txt">
+        <h1>Алюминиевые и стеклянные конструкции для дома и бизнеса</h1>
+        <p class="lead">Проектируем, производим в своём цехе и монтируем своими бригадами. Ульяновск и область, с 2012 года.</p>
+        <div class="btns">
+          <button class="btn" type="button" data-go="home#home-dirs">Выбрать направление</button>
+          <button class="btn btn-ghost" type="button" data-go="home#home-works">Смотреть работы</button>
+        </div>
+      </div>
+      <figure class="hero-fig">
+        <img class="hero-main" src="img/r-house-panoramic.webp" alt="Частный дом с витражным остеклением на два этажа, тёмный алюминиевый профиль" fetchpriority="high">
+        <figure class="hero-inset">
+          <img src="img/r-worker.webp" alt="Мастер собирает конструкцию из алюминиевого профиля в цехе">
+          <figcaption>Собственный цех в Ульяновске</figcaption>
+        </figure>
+      </figure>
+    </div>
+  </div>
+
+  <div class="facts-band">
+    <div class="wrap facts">
+      <div><b>2012</b><span>работаем с этого года</span></div>
+      <div><b>1720</b><span>конструкций изготовили и установили</span></div>
+      <div><b>Свой цех</b><span>режем и собираем в Ульяновске</span></div>
+      <div><b>Свои бригады</b><span>монтаж без перепродажи подряда</span></div>
+    </div>
+  </div>
+
+  <div class="sec" id="home-dirs">
+    <div class="wrap">
+      <h2>Что вам нужно сделать?</h2>
+      <p class="sub">Выберите, для чего конструкция. На странице направления покажем решения, цены и работы именно под вашу задачу.</p>
+      <div class="routes">
+        <article class="route route-home">
+          <a class="route-img" href="#dom"><img src="img/r-veranda-sunset.webp" alt="Остеклённая веранда частного дома на закате" loading="lazy"></a>
+          <div class="route-body">
+            <h3><a href="#dom">Для дома</a></h3>
+            <p>Веранды, панорамные окна, входные двери, перегородки, душевые. Квартира, коттедж, дача.</p>
+            <ul class="chips" data-render="route-links" data-seg="dom"></ul>
+            <a class="btn" href="#dom">Решения для дома</a>
+          </div>
+        </article>
+        <article class="route route-biz">
+          <a class="route-img" href="#biznes"><img src="img/c-omoda-1.webp" alt="Витражный фасад автосалона" loading="lazy"></a>
+          <div class="route-body">
+            <h3><a href="#biznes">Для бизнеса</a></h3>
+            <p>Фасады, входные группы, тамбуры, офисные и сантехнические перегородки. Работаем с юрлицами по договору.</p>
+            <ul class="chips" data-render="route-links" data-seg="biz"></ul>
+            <a class="btn btn-light" href="#biznes">Решения для бизнеса</a>
+          </div>
+        </article>
+      </div>
+      <p class="route-partner">Дизайнер, архитектор или застройщик? <a href="#partneram">Условия для партнёров</a></p>
+
+      <div class="soft">
+        <div class="soft-txt">
+          <h3>Не знаете, как называется конструкция?</h3>
+          <p>Пришлите фото проёма в мессенджер. Подскажем решение и вилку цены.</p>
+        </div>
+        <form class="soft-form" data-src="Главная: подсказка по фото" novalidate>
+          <div class="fld"><label for="sf-home1-ph">Телефон</label><input id="sf-home1-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
+          <div class="fld"><label for="sf-home1-ch">Куда написать</label><select id="sf-home1-ch" name="channel"><option>Telegram</option><option>MAX</option><option>WhatsApp</option><option>Позвонить</option></select></div>
+          <button class="btn" type="submit">Получить подсказку</button>
+          <label class="consent"><input type="checkbox" name="consent" required> Согласен на обработку данных по <a href="#politika">политике</a></label>
+          <p class="form-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec alt" id="home-prices">
+    <div class="wrap">
+      <h2>Сколько это стоит</h2>
+      <p class="sub">Ориентиры за квадратный метр. Помогают понять порядок цен до звонка.</p>
+      <div class="tabs" role="tablist" aria-label="Направление">
+        <button role="tab" aria-selected="true" data-tab="dom" type="button">Для дома</button>
+        <button role="tab" aria-selected="false" data-tab="biz" type="button">Для бизнеса</button>
+      </div>
+      <div class="price-grid" data-render="prices" data-seg="dom"></div>
+      <div class="price-note">
+        <p>Цена зависит от размеров, профиля (тёплый или холодный), стекла, фурнитуры и сложности монтажа. Точную цену называем после замера и фиксируем в договоре.</p>
+        <button class="btn" type="button" data-go="home#home-kviz">Рассчитать мой объект</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" id="home-works">
+    <div class="wrap">
+      <h2>Сделано в Ульяновске и области</h2>
+      <p class="sub">Реальные объекты, снятые на телефон на месте. Нажмите на карточку, чтобы посмотреть фото и что сделали.</p>
+      <div class="filters" data-filters="home"></div>
+      <div class="cases" data-render="cases" data-scope="all" data-limit="9"></div>
+      <div class="more-row"><button class="btn btn-ghost" type="button" data-more>Показать ещё</button><a class="btn btn-ghost" href="https://pin.it/26UtCLS7i" target="_blank" rel="noopener">Ещё больше работ в Pinterest</a></div>
+
+      <div class="soft">
+        <div class="soft-txt">
+          <h3>Похожая задача?</h3>
+          <p>Покажем ещё объекты с таким решением и прикинем цену для вашего.</p>
+        </div>
+        <form class="soft-form" data-src="Главная: похожая задача" novalidate>
+          <div class="fld"><label for="sf-home2-ph">Телефон</label><input id="sf-home2-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
+          <div class="fld"><label for="sf-home2-tx">Что нужно</label><input id="sf-home2-tx" name="comment" type="text" placeholder="Например, веранда 6 метров"></div>
+          <button class="btn" type="submit">Показать похожие</button>
+          <label class="consent"><input type="checkbox" name="consent" required> Согласен на обработку данных по <a href="#politika">политике</a></label>
+          <p class="form-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec alt" id="home-kviz">
+    <div class="wrap kviz-wrap">
+      <div class="kviz-aside">
+        <h2>Подберём решение и пришлём каталог</h2>
+        <p class="sub">Ответьте на 4 вопроса. Не придётся искать информацию самому: пришлём каталог под вашу задачу, а менеджер объяснит нюансы и посчитает варианты.</p>
+        <div class="catalogs" aria-hidden="true">
+          <div class="cat cat-1"><img src="img/r-fluted-sliding.webp" alt="" loading="lazy"><span>Каталог цветов и дизайнов</span><small>Для дома</small></div>
+          <div class="cat cat-2"><img src="img/r-store-tambour.webp" alt="" loading="lazy"><span>Каталог конструкций</span><small>Для бизнеса</small></div>
+          <div class="cat cat-3"><img src="img/d-arch.webp" alt="" loading="lazy"><span>Решения и узлы</span><small>Для партнёров</small></div>
+        </div>
+      </div>
+      <div class="kviz" data-quiz="main"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ДЛЯ ДОМА ================= -->
+<section class="page" data-page="dom" data-title="Алюфорс для дома: веранды, двери, перегородки, душевые" hidden>
+  <div class="sec hero">
+    <div class="wrap hero-grid">
+      <div class="hero-txt">
+        <p class="eyebrow">Для дома и квартиры</p>
+        <h1>Больше света и простора в доме</h1>
+        <p class="lead">Веранды, панорамное остекление, входные двери, перегородки и душевые по вашим размерам. Делаем сами, от замера до монтажа.</p>
+        <div class="btns">
+          <button class="btn" type="button" data-go="dom#dom-kviz">Подобрать решение</button>
+          <button class="btn btn-ghost" type="button" data-go="dom#dom-works">Смотреть работы</button>
+        </div>
+      </div>
+      <figure class="hero-fig">
+        <img class="hero-main" src="img/r-veranda-sunset.webp" alt="Остеклённая веранда кирпичного дома с тёмным профилем" loading="lazy">
+      </figure>
+    </div>
+  </div>
+
+  <div class="sec alt" id="dom-solutions">
+    <div class="wrap">
+      <h2>Что можно сделать</h2>
+      <p class="sub">Решения, которые мы уже делали в домах и квартирах Ульяновска. Цены указаны за квадратный метр.</p>
+      <div data-render="dirs" data-seg="dom"></div>
+      <div class="soft">
+        <div class="soft-txt">
+          <h3>Пришлите фото дома или проёма</h3>
+          <p>Подскажем, какая система подойдёт, и назовём вилку цены. Обычно хватает двух фото и примерных размеров.</p>
+        </div>
+        <form class="soft-form" data-src="Дом: фото проёма" novalidate>
+          <div class="fld"><label for="sf-dom1-ph">Телефон</label><input id="sf-dom1-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
+          <div class="fld"><label for="sf-dom1-ch">Куда написать</label><select id="sf-dom1-ch" name="channel"><option>Telegram</option><option>MAX</option><option>WhatsApp</option><option>Позвонить</option></select></div>
+          <button class="btn" type="submit">Отправить фото</button>
+          <label class="consent"><input type="checkbox" name="consent" required> Согласен на обработку данных по <a href="#politika">политике</a></label>
+          <p class="form-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" id="dom-prices">
+    <div class="wrap">
+      <h2>Сколько стоит в реальных размерах</h2>
+      <p class="sub">Четыре типовых примера. Посчитали по минимальной цене за метр, чтобы был понятен порядок суммы.</p>
+      <div class="examples" data-render="examples"></div>
+      <div class="factors">
+        <h3>От чего зависит итоговая цена</h3>
+        <ul>
+          <li><b>Профиль.</b> Холодный дешевле, тёплый с терморазрывом нужен там, где зимой будет тепло.</li>
+          <li><b>Стекло.</b> Обычное, закалённое, триплекс, матовое или тонированное.</li>
+          <li><b>Открывание.</b> Глухие, распашные, раздвижные или складные створки.</li>
+          <li><b>Цвет.</b> Стандартные цвета или покраска в любой RAL, имитация дерева.</li>
+          <li><b>Монтаж.</b> Этаж, доступ, демонтаж старой конструкции.</li>
+        </ul>
+        <button class="btn" type="button" data-go="dom#dom-kviz">Узнать точную цену</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec alt" id="dom-colors">
+    <div class="wrap colors">
+      <div class="colors-txt">
+        <h2>Выберите, как это будет выглядеть</h2>
+        <p class="sub">Цвет профиля, стекло и фурнитуру подбираем под интерьер и фасад. Пришлём каталог цветов и дизайнов, а образцы покажем в шоуруме на проспекте Созидателей.</p>
+        <div class="swatches" aria-label="Цвета профиля">
+          <div><i style="background:#383E42"></i>Антрацит</div>
+          <div><i style="background:#141414"></i>Чёрный</div>
+          <div><i style="background:#F4F4F0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)"></i>Белый</div>
+          <div><i style="background:#4A3A33"></i>Коричневый</div>
+          <div><i style="background:linear-gradient(135deg,#C9CBCC,#8E9193)"></i>Серебро</div>
+          <div><i style="background:#8B2E2E"></i>Любой RAL</div>
+        </div>
+        <form class="soft-form soft-inline" data-src="Дом: каталог цветов" novalidate>
+          <div class="fld"><label for="sf-dom2-ph">Телефон</label><input id="sf-dom2-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
+          <div class="fld"><label for="sf-dom2-ch">Куда прислать</label><select id="sf-dom2-ch" name="channel"><option>Telegram</option><option>MAX</option><option>WhatsApp</option><option>E-mail</option></select></div>
+          <button class="btn" type="submit">Получить каталог цветов</button>
+          <label class="consent"><input type="checkbox" name="consent" required> Согласен на обработку данных по <a href="#politika">политике</a></label>
+          <p class="form-msg" role="status"></p>
+        </form>
+      </div>
+      <div class="glass-samples">
+        <figure><img src="img/r-terrace-door.webp" alt="Прозрачное стекло в белом профиле" loading="lazy"><figcaption>Прозрачное</figcaption></figure>
+        <figure><img src="img/r-white-sliding.webp" alt="Матовое стекло в раздвижной перегородке" loading="lazy"><figcaption>Матовое</figcaption></figure>
+        <figure><img src="img/r-fluted-sliding.webp" alt="Рифлёное стекло в чёрном профиле" loading="lazy"><figcaption>Рифлёное</figcaption></figure>
+        <figure><img src="img/r-sauna-home.webp" alt="Тонированное стекло в двери сауны" loading="lazy"><figcaption>Тонированное</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" id="dom-works">
+    <div class="wrap">
+      <h2>Работы для дома</h2>
+      <p class="sub">Частные дома, квартиры и бани. Адреса не публикуем, показываем район по запросу.</p>
+      <div class="cases" data-render="cases" data-scope="dom" data-limit="9"></div>
+      <div class="more-row"><button class="btn btn-ghost" type="button" data-more>Показать ещё</button></div>
+    </div>
+  </div>
+
+  <div class="sec alt" id="dom-steps">
+    <div class="wrap">
+      <h2>Как мы работаем</h2>
+      <p class="sub">Шесть шагов от первого сообщения до готовой конструкции.</p>
+      <div class="steps-photos">
+        <figure><img src="img/r-showroom.webp" alt="Шоурум Алюфорс с образцами конструкций" loading="lazy"><figcaption>Образцы в шоуруме</figcaption></figure>
+        <figure><img src="img/r-frame.webp" alt="Собранная алюминиевая конструкция в цехе" loading="lazy"><figcaption>Сборка в цехе</figcaption></figure>
+        <figure><img src="img/r-loading.webp" alt="Погрузка стеклянных конструкций на машину для доставки" loading="lazy"><figcaption>Доставка на объект</figcaption></figure>
+      </div>
+      <ol class="steps">
+        <li><b>Пишете или звоните</b><span>Присылаете задачу и фото. Отправляем каталог решений.</span></li>
+        <li><b>Считаем варианты</b><span>Менеджер объясняет разницу систем и называет вилку цены.</span></li>
+        <li><b>Замер и образцы</b><span>Приезжаем на объект, показываем образцы профиля и стекла.</span></li>
+        <li><b>Договор</b><span>Состав конструкции, цена и сроки на бумаге.</span></li>
+        <li><b>Производство и монтаж</b><span>Делаем в своём цехе, ставим своей бригадой.</span></li>
+        <li><b>На связи после</b><span>Регулировка, сервис и ответы на вопросы после монтажа.</span></li>
+      </ol>
+      <div class="soft">
+        <div class="soft-txt"><h3>Начнём с первого шага</h3><p>Оставьте телефон, менеджер напишет в удобный мессенджер и пришлёт каталог.</p></div>
+        <form class="soft-form" data-src="Дом: первый шаг" novalidate>
+          <div class="fld"><label for="sf-dom3-ph">Телефон</label><input id="sf-dom3-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
+          <div class="fld"><label for="sf-dom3-nm">Имя</label><input id="sf-dom3-nm" name="name" type="text" autocomplete="given-name" placeholder="Как к вам обращаться"></div>
+          <button class="btn" type="submit">Жду сообщения</button>
+          <label class="consent"><input type="checkbox" name="consent" required> Согласен на обработку данных по <a href="#politika">политике</a></label>
+          <p class="form-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" id="dom-kviz">
+    <div class="wrap kviz-wrap">
+      <div class="kviz-aside">
+        <h2>Каталог цветов и дизайнов в подарок</h2>
+        <p class="sub">Четыре вопроса, и пришлём каталог, три похожих объекта и ориентир цены для вашей задачи.</p>
+        <div class="faq" data-render="faq" data-seg="dom"></div>
+      </div>
+      <div class="kviz" data-quiz="dom"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ДЛЯ БИЗНЕСА ================= -->
+<section class="page" data-page="biznes" data-title="Алюфорс для бизнеса: фасады, входные группы, перегородки" hidden>
+  <div class="sec hero">
+    <div class="wrap hero-grid">
+      <div class="hero-txt">
+        <p class="eyebrow">Для бизнеса и коммерческих объектов</p>
+        <h1>Фасады, входные группы и перегородки под ключ</h1>
+        <p class="lead">Свой цех и монтажные бригады. Считаем по чертежам, работаем по договору с юрлицами, фиксируем сроки.</p>
+        <div class="btns">
+          <button class="btn" type="button" data-go="biznes#biz-kviz">Отправить проект на расчёт</button>
+          <button class="btn btn-ghost" type="button" data-go="biznes#biz-works">Смотреть объекты</button>
+        </div>
+      </div>
+      <figure class="hero-fig">
+        <img class="hero-main" src="img/hero-building.webp" alt="Коммерческое здание со стеклянным фасадом вечером" loading="lazy">
+      </figure>
+    </div>
+  </div>
+  <div class="clients-band">
+    <div class="wrap clients">
+      <span class="clients-lbl">Работали на объектах</span>
+      <ul><li>OMODA и JAECOO</li><li>Технониколь</li><li>Пятёрочка</li><li>Эфес</li><li>Росатом</li><li>Агророс банк</li><li>Этажи</li><li>ТЦ «Парус»</li><li>Аквапарк «Улёт»</li><li>Завод «Тракт»</li></ul>
+    </div>
+  </div>
+
+  <div class="sec" id="biz-solutions">
+    <div class="wrap">
+      <h2>Что делаем для бизнеса</h2>
+      <p class="sub">Снаружи и внутри здания. Цены указаны за квадратный метр.</p>
+      <div data-render="dirs" data-seg="biz"></div>
+      <div class="soft">
+        <div class="soft-txt"><h3>Есть чертежи или ТЗ?</h3><p>Пришлите ссылку или опишите объект. Посчитаем по вашим данным и предложим систему.</p></div>
+        <form class="soft-form" data-src="Бизнес: расчёт по чертежам" novalidate>
+          <div class="fld"><label for="sf-biz1-co">Компания</label><input id="sf-biz1-co" name="company" type="text" autocomplete="organization" placeholder="Название"></div>
+          <div class="fld"><label for="sf-biz1-ph">Телефон</label><input id="sf-biz1-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
+          <div class="fld fld-wide"><label for="sf-biz1-ln">Ссылка на проект или описание</label><input id="sf-biz1-ln" name="comment" type="text" placeholder="Яндекс Диск, Google Диск или пара слов об объекте"></div>
+          <button class="btn" type="submit">Отправить на расчёт</button>
+          <label class="consent"><input type="checkbox" name="consent" required> Согласен на обработку данных по <a href="#politika">политике</a></label>
+          <p class="form-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec alt" id="biz-works">
+    <div class="wrap">
+      <h2>Объекты</h2>
+      <p class="sub">Фасады, входы, офисы, производства и SPA. Нажмите на карточку, чтобы посмотреть фото.</p>
+      <div class="filters" data-filters="biz"></div>
+      <div class="cases" data-render="cases" data-scope="biz" data-limit="9"></div>
+      <div class="more-row"><button class="btn btn-ghost" type="button" data-more>Показать ещё</button></div>
+    </div>
+  </div>
+
+  <div class="sec" id="biz-prices">
+    <div class="wrap">
+      <h2>Ориентиры по ценам</h2>
+      <p class="sub">За квадратный метр конструкции. Смету по объекту составляем по чертежам или после замера.</p>
+      <div class="price-grid" data-render="prices" data-seg="biz"></div>
+      <div class="soft">
+        <div class="soft-txt"><h3>Нужна смета по объекту?</h3><p>Разложим по позициям: профиль, стекло, фурнитура, монтаж. Видно, за что платите.</p></div>
+        <form class="soft-form" data-src="Бизнес: смета" novalidate>
+          <div class="fld"><label for="sf-biz2-co">Компания</label><input id="sf-biz2-co" name="company" type="text" autocomplete="organization" placeholder="Название"></div>
+          <div class="fld"><label for="sf-biz2-ph">Телефон</label><input id="sf-biz2-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
+          <button class="btn" type="submit">Получить смету</button>
+          <label class="consent"><input type="checkbox" name="consent" required> Согласен на обработку данных по <a href="#politika">политике</a></label>
+          <p class="form-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec alt" id="biz-factory">
+    <div class="wrap">
+      <h2>Не перепродаём. Делаем сами</h2>
+      <p class="sub">Режем профиль, собираем и остекляем конструкции в своём цехе в Ульяновске. Поэтому отвечаем и за узлы, и за сроки.</p>
+      <div class="bento">
+        <figure class="b-a"><img src="img/r-worker.webp" alt="Обработка алюминиевого профиля в цехе" loading="lazy"><figcaption>Обработка профиля</figcaption></figure>
+        <figure class="b-b"><img src="img/r-frame.webp" alt="Готовая рама двери в защитной плёнке" loading="lazy"><figcaption>Сборка рам</figcaption></figure>
+        <figure class="b-c"><img src="img/r-profiles.webp" alt="Склад алюминиевого профиля разных цветов" loading="lazy"><figcaption>Склад профиля</figcaption></figure>
+        <figure class="b-d"><img src="img/r-loading.webp" alt="Погрузка стеклопакетов в машину" loading="lazy"><figcaption>Доставка на объект</figcaption></figure>
+        <div class="b-e">
+          <ul class="ticks">
+            <li>Профиль в любом цвете RAL и под дерево</li>
+            <li>Тёплые и холодные системы</li>
+            <li>Своя доставка и монтажные бригады</li>
+            <li>Противопожарные конструкции</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" id="biz-steps">
+    <div class="wrap">
+      <h2>Как ведём объект</h2>
+      <p class="sub">Один менеджер от расчёта до сдачи.</p>
+      <ol class="steps">
+        <li><b>ТЗ или чертёж</b><span>Присылаете проект, ведомость или описание задачи.</span></li>
+        <li><b>Выезд на объект</b><span>Смотрим проёмы, узлы примыкания, условия монтажа.</span></li>
+        <li><b>Расчёт и чертежи</b><span>Подбираем систему, готовим смету и рабочие чертежи.</span></li>
+        <li><b>Договор</b><span>Этапы, сроки и ответственность сторон.</span></li>
+        <li><b>Производство</b><span>Изготавливаем в своём цехе по согласованным чертежам.</span></li>
+        <li><b>Монтаж и сдача</b><span>Ставим своей бригадой, сдаём с закрывающими документами.</span></li>
+      </ol>
+      <div class="soft">
+        <div class="soft-txt"><h3>Обсудим сроки по вашему объекту</h3><p>Скажем, сколько займёт производство и монтаж, и с какого этапа можно начинать.</p></div>
+        <form class="soft-form" data-src="Бизнес: сроки" novalidate>
+          <div class="fld"><label for="sf-biz3-ph">Телефон</label><input id="sf-biz3-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
+          <div class="fld"><label for="sf-biz3-tx">Объект</label><input id="sf-biz3-tx" name="comment" type="text" placeholder="Например, тамбур магазина"></div>
+          <button class="btn" type="submit">Обсудить сроки</button>
+          <label class="consent"><input type="checkbox" name="consent" required> Согласен на обработку данных по <a href="#politika">политике</a></label>
+          <p class="form-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec alt" id="biz-kviz">
+    <div class="wrap kviz-wrap">
+      <div class="kviz-aside">
+        <h2>Каталог конструкций и материалы для проекта</h2>
+        <p class="sub">Четыре вопроса об объекте. Пришлём каталог конструкций, примеры похожих объектов и следующий шаг по расчёту.</p>
+        <div class="faq" data-render="faq" data-seg="biz"></div>
+      </div>
+      <div class="kviz" data-quiz="biz"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПАРТНЁРАМ ================= -->
+<section class="page" data-page="partneram" data-title="Алюфорс для партнёров: дизайнерам, архитекторам, застройщикам" hidden>
+  <div class="sec hero">
+    <div class="wrap hero-grid">
+      <div class="hero-txt">
+        <p class="eyebrow">Дизайнерам, архитекторам, застройщикам</p>
+        <h1>Реализуем ваш проект в алюминии и стекле</h1>
+        <p class="lead">Подбор системы, расчёт по чертежам, производство и монтаж в одних руках. Вы отвечаете за идею, мы за то, чтобы она встала в проём.</p>
+        <div class="btns">
+          <button class="btn" type="button" data-go="partneram#p-kviz">Получить каталог для партнёров</button>
+          <button class="btn btn-ghost" type="button" data-go="partneram#p-solutions">Сложные решения</button>
+        </div>
+      </div>
+      <figure class="hero-fig">
+        <img class="hero-main" src="img/r-hammam.webp" alt="Арочная стеклянная дверь хаммама в мозаичной отделке" loading="lazy">
+      </figure>
+    </div>
+  </div>
+
+  <div class="sec alt" id="p-get">
+    <div class="wrap">
+      <h2>Что получает партнёр</h2>
+      <div class="benefits">
+        <div><h3>Подбор системы</h3><p>Предложим профиль и открывание под задачу, а не из короткого типового списка.</p></div>
+        <div><h3>Расчёт по чертежам</h3><p>Считаем по вашему проекту, раскладываем смету по позициям.</p></div>
+        <div><h3>Проработка узлов</h3><p>Покажем узлы примыкания до черновой отделки, чтобы проёмы подготовили правильно.</p></div>
+        <div><h3>Производство под проект</h3><p>Нестандартные формы, арки, раскладка, любой цвет RAL.</p></div>
+        <div><h3>Монтаж своими бригадами</h3><p>Отвечаем за результат на объекте, а не только за поставку.</p></div>
+        <div><h3>Один контакт</h3><p>Менеджер ведёт проект от расчёта до сдачи и держит вас в курсе.</p></div>
+      </div>
+      <h3 class="formats-h">Форматы работы</h3>
+      <div class="formats">
+        <div><b>Монтаж Алюфорс</b><span>Вы ведёте клиента, мы производим и монтируем под ваш проект.</span></div>
+        <div><b>Поставка</b><span>Изготавливаем конструкции, вы монтируете сами.</span></div>
+        <div><b>Под вашим брендом</b><span>Производим на базе Алюфорс под бренд партнёра.</span></div>
+      </div>
+      <div class="soft">
+        <div class="soft-txt"><h3>Расскажите, в каком проекте подключить Алюфорс</h3><p>Пришлите ссылку на проект или пару слов о задаче. Ответим с вариантами и сроками.</p></div>
+        <form class="soft-form" data-src="Партнёры: проект" novalidate>
+          <div class="fld"><label for="sf-p1-nm">Имя</label><input id="sf-p1-nm" name="name" type="text" autocomplete="name" placeholder="Имя"></div>
+          <div class="fld"><label for="sf-p1-co">Студия или компания</label><input id="sf-p1-co" name="company" type="text" autocomplete="organization" placeholder="Название"></div>
+          <div class="fld"><label for="sf-p1-ph">Телефон или e-mail</label><input id="sf-p1-ph" name="phone" type="text" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
+          <div class="fld fld-wide"><label for="sf-p1-ln">Проект</label><input id="sf-p1-ln" name="comment" type="text" placeholder="Ссылка или описание"></div>
+          <button class="btn" type="submit">Отправить запрос</button>
+          <label class="consent"><input type="checkbox" name="consent" required> Согласен на обработку данных по <a href="#politika">политике</a></label>
+          <p class="form-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" id="p-solutions">
+    <div class="wrap">
+      <h2>Решения для сложных проектов</h2>
+      <p class="sub">То, что обычно ищут дизайнеры и архитекторы. Всё на реальных объектах.</p>
+      <div class="solutions">
+        <figure><img src="img/r-hammam.webp" alt="Арочная стеклянная дверь" loading="lazy"><figcaption><b>Арки и нестандартные формы</b>Стекло по шаблону проёма, двери в арку.</figcaption></figure>
+        <figure><img src="img/r-white-sliding.webp" alt="Раздвижная перегородка из четырёх полотен" loading="lazy"><figcaption><b>Раздвижные и каскадные системы</b>Широкие проходы без потери площади.</figcaption></figure>
+        <figure><img src="img/r-fluted-sliding.webp" alt="Перегородка с рифлёным стеклом" loading="lazy"><figcaption><b>Рифлёное и тонированное стекло</b>Свет проходит, приватность остаётся.</figcaption></figure>
+        <figure><img src="img/c-angar-1.webp" alt="Лофт-перегородка с чёрной раскладкой" loading="lazy"><figcaption><b>Лофт и раскладка</b>Тонкие чёрные линии по вашему эскизу.</figcaption></figure>
+        <figure><img src="img/r-glass-doors-arch.webp" alt="Цельностеклянные двери с длинными ручками" loading="lazy"><figcaption><b>Цельностеклянные двери</b>Без рамы, на точечной фурнитуре.</figcaption></figure>
+        <figure><img src="img/r-stairs.webp" alt="Стеклянное ограждение лестницы" loading="lazy"><figcaption><b>Стеклянные ограждения</b>Лестницы и второй свет без стоек.</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec alt" id="p-kviz">
+    <div class="wrap kviz-wrap">
+      <div class="kviz-aside">
+        <h2>Каталог для партнёров</h2>
+        <p class="sub">Три вопроса. Пришлём каталог конструкций и узлов, примеры решений и условия сотрудничества.</p>
+        <div class="catalogs" aria-hidden="true">
+          <div class="cat cat-1"><img src="img/r-office-pattern.webp" alt="" loading="lazy"><span>Конструкции и узлы</span><small>Технический каталог</small></div>
+          <div class="cat cat-2"><img src="img/r-stairs.webp" alt="" loading="lazy"><span>Примеры решений</span><small>Подборка объектов</small></div>
+        </div>
+      </div>
+      <div class="kviz" data-quiz="partner"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= О НАС ================= -->
+<section class="page" data-page="o-nas" data-title="О компании Алюфорс" hidden>
+  <div class="sec hero">
+    <div class="wrap hero-grid">
+      <div class="hero-txt">
+        <p class="eyebrow">О компании</p>
+        <h1>Алюфорс. Алюминий и стекло с 2012 года</h1>
+        <p class="lead">Местный производитель и монтажник алюминиевых и светопрозрачных конструкций. Ведём объект от идеи до монтажа, один партнёр вместо нескольких подрядчиков.</p>
+        <div class="btns">
+          <button class="btn" type="button" data-go="o-nas#about-visit">Приехать в шоурум</button>
+          <button class="btn btn-ghost" type="button" data-go="o-nas#about-contacts">Контакты</button>
+        </div>
+      </div>
+      <figure class="hero-fig">
+        <img class="hero-main" src="img/r-showroom.webp" alt="Вход в шоурум Алюфорс с вывеской" loading="lazy">
+      </figure>
+    </div>
+  </div>
+
+  <div class="sec alt" id="about-visit">
+    <div class="wrap about-facts">
+      <div class="facts facts-plain">
+        <div><b>2012</b><span>работаем с этого года</span></div>
+        <div><b>1720</b><span>конструкций изготовили и установили</span></div>
+        <div><b>Свой цех</b><span>производство в Ульяновске</span></div>
+        <div><b>Ульяновск и область</b><span>выезжаем на замер и монтаж</span></div>
+      </div>
+      <div class="visit">
+        <img src="img/r-office.webp" alt="Переговорная зона в шоуруме Алюфорс" loading="lazy">
+        <div class="visit-txt">
+          <h3>Приезжайте посмотреть образцы</h3>
+          <p>В шоуруме стоят перегородки, раздвижной портал, двери и образцы стекла. Можно потрогать и сравнить.</p>
+          <form class="soft-form soft-inline" data-src="О нас: визит в шоурум" novalidate>
+            <div class="fld"><label for="sf-ab1-ph">Телефон</label><input id="sf-ab1-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
+            <div class="fld"><label for="sf-ab1-dt">Когда удобно</label><input id="sf-ab1-dt" name="comment" type="text" placeholder="Например, в субботу днём"></div>
+            <button class="btn" type="submit">Записаться на визит</button>
+            <label class="consent"><input type="checkbox" name="consent" required> Согласен на обработку данных по <a href="#politika">политике</a></label>
+            <p class="form-msg" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" id="about-process">
+    <div class="wrap">
+      <h2>Как рождается конструкция</h2>
+      <p class="sub">Всё, что видно на фото, происходит у нас, без посредников между цехом и объектом.</p>
+      <ol class="path">
+        <li><img src="img/r-profiles.webp" alt="Стеллажи с алюминиевым профилем" loading="lazy"><b>Профиль</b><span>Храним профиль разных систем и цветов</span></li>
+        <li><img src="img/r-worker.webp" alt="Обработка профиля" loading="lazy"><b>Резка и обработка</b><span>Размеры по замеру, до миллиметра</span></li>
+        <li><img src="img/r-frame.webp" alt="Готовая рама двери" loading="lazy"><b>Сборка</b><span>Рамы, створки, фурнитура</span></li>
+        <li><img src="img/r-loading.webp" alt="Погрузка конструкций" loading="lazy"><b>Доставка</b><span>Своя логистика стекла и рам</span></li>
+        <li><img src="img/c-parus-1.webp" alt="Монтаж стеклопакетов на фасаде" loading="lazy"><b>Монтаж</b><span>Свои бригады на объекте</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="sec alt" id="about-standard">
+    <div class="wrap">
+      <h2>Стандарт Алюфорс</h2>
+      <div class="standard">
+        <div><b>Понимание</b><span>Сначала разбираемся в задаче и контексте объекта.</span></div>
+        <div><b>Решение</b><span>Предлагаем систему и конфигурацию, которые подходят именно сюда.</span></div>
+        <div><b>Честность</b><span>Заранее говорим о технических ограничениях.</span></div>
+        <div><b>Результат</b><span>Доводим до аккуратного и точного монтажа.</span></div>
+      </div>
+      <div class="soft">
+        <div class="soft-txt"><h3>Написать руководителю</h3><p>Предложение, вопрос по объекту или замечание по работе. Читает руководитель компании.</p></div>
+        <form class="soft-form" data-src="О нас: письмо руководителю" novalidate>
+          <div class="fld"><label for="sf-ab2-nm">Имя</label><input id="sf-ab2-nm" name="name" type="text" autocomplete="name" placeholder="Имя"></div>
+          <div class="fld"><label for="sf-ab2-ph">Телефон</label><input id="sf-ab2-ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></div>
+          <div class="fld fld-wide"><label for="sf-ab2-tx">Сообщение</label><input id="sf-ab2-tx" name="comment" type="text" placeholder="Коротко о вопросе"></div>
+          <button class="btn" type="submit">Отправить</button>
+          <label class="consent"><input type="checkbox" name="consent" required> Согласен на обработку данных по <a href="#politika">политике</a></label>
+          <p class="form-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" id="about-objects">
+    <div class="wrap">
+      <h2>Среди наших объектов</h2>
+      <ul class="objects">
+        <li>Автосалон OMODA и JAECOO</li><li>Завод «Технониколь»</li><li>Магазины «Пятёрочка»</li><li>Компания «Эфес»</li><li>«Росатом»</li><li>Агророс банк</li><li>Агентство «Этажи»</li><li>ТЦ «Парус»</li><li>Аквапарк «Улёт»</li><li>Завод «Тракт»</li><li>«Царская усадьба»</li><li>Офис «Гулливер»</li>
+      </ul>
+      <div class="more-row"><button class="btn btn-ghost" type="button" data-go="home#home-works">Смотреть работы</button></div>
+    </div>
+  </div>
+
+  <div class="sec alt" id="about-contacts">
+    <div class="wrap contacts">
+      <div>
+        <h2>Контакты</h2>
+        <dl class="cdl">
+          <dt>Шоурум и офис</dt><dd>Ульяновск, проспект Созидателей, 116, ТЦ «Созидатель»</dd>
+          <dt>Телефоны</dt><dd><a href="tel:+79372760726">+7 (937) 276-07-26</a><br><a href="tel:+79278229763">+7 (927) 822-97-63</a></dd>
+          <dt>Почта</dt><dd><span class="sel">aluforceulsk@gmail.com</span></dd>
+        </dl>
+        <div class="btns">
+          <a class="btn btn-ghost" href="https://yandex.ru/maps/?text=%D0%A3%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%A1%D0%BE%D0%B7%D0%B8%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%2C%20116" target="_blank" rel="noopener">Яндекс Карты</a>
+          <a class="btn btn-ghost" href="https://2gis.ru/ulyanovsk/search/%D0%9F%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%A1%D0%BE%D0%B7%D0%B8%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%20116" target="_blank" rel="noopener">2ГИС</a>
+        </div>
+      </div>
+      <img src="img/r-partition.webp" alt="Образцы лофт-перегородки и раздвижного портала в шоуруме" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ================= ПОЛИТИКА ================= -->
+<section class="page" data-page="politika" data-title="Политика обработки персональных данных" hidden>
+  <div class="sec">
+    <div class="wrap prose">
+      <h1>Политика обработки персональных данных</h1>
+      <p>Компания «Алюфорс» (Ульяновск, проспект Созидателей, 116) обрабатывает персональные данные посетителей сайта в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</p>
+      <h3>Какие данные мы получаем</h3>
+      <p>Имя, телефон, адрес электронной почты, название компании и сведения об объекте, которые вы сами указываете в формах сайта.</p>
+      <h3>Зачем</h3>
+      <p>Чтобы связаться с вами, отправить каталог и материалы, подготовить расчёт и договор. Данные не передаются третьим лицам, кроме случаев, предусмотренных законом.</p>
+      <h3>Как долго</h3>
+      <p>До достижения цели обработки или до отзыва согласия. Отозвать согласие можно письмом на aluforceulsk@gmail.com.</p>
+      <p class="muted">Реквизиты оператора персональных данных будут добавлены перед публикацией сайта.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr-grid">
+    <div class="ftr-brand">
+      <img src="img/logo-light.png" alt="алюфорс" width="146" height="48">
+      <p>Алюминиевые и стеклянные конструкции. Проектирование, производство, монтаж.</p>
+    </div>
+    <div>
+      <h4>Направления</h4>
+      <a href="#dom">Для дома</a><a href="#biznes">Для бизнеса</a><a href="#partneram">Партнёрам и дизайнерам</a><a href="#o-nas">О компании</a>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <p>Ульяновск, проспект Созидателей, 116, ТЦ «Созидатель»</p>
+      <p><a href="tel:+79372760726">+7 (937) 276-07-26</a><br><a href="tel:+79278229763">+7 (927) 822-97-63</a></p>
+      <p class="sel">aluforceulsk@gmail.com</p>
+    </div>
+    <div>
+      <h4>Мы на картах</h4>
+      <a href="https://yandex.ru/maps/?text=%D0%A3%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%A1%D0%BE%D0%B7%D0%B8%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%2C%20116" target="_blank" rel="noopener">Яндекс Карты</a>
+      <a href="https://2gis.ru/ulyanovsk/search/%D0%9F%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%A1%D0%BE%D0%B7%D0%B8%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%20116" target="_blank" rel="noopener">2ГИС</a>
+      <a href="https://pin.it/26UtCLS7i" target="_blank" rel="noopener">Pinterest</a>
+    </div>
+  </div>
+  <div class="wrap ftr-bottom"><span>© 2012–2026 Алюфорс</span><a href="#politika">Политика обработки данных</a></div>
+</footer>
+
+<div class="mbar"><button class="btn" type="button" data-go="@kviz">Получить каталог</button></div>
+
+<dialog class="modal" id="caseModal" aria-labelledby="cm-title">
+  <div class="modal-in">
+    <button class="modal-x" type="button" aria-label="Закрыть" data-close>&times;</button>
+    <div class="cm-gal">
+      <img id="cm-img" src="" alt="">
+      <div class="cm-thumbs" id="cm-thumbs"></div>
+    </div>
+    <div class="cm-txt">
+      <p class="cm-type" id="cm-type"></p>
+      <h3 id="cm-title"></h3>
+      <ul class="ticks" id="cm-did"></ul>
+      <button class="btn" type="button" id="cm-cta">Хочу похожее решение</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* Контент сайта Алюфорс. Цены: ориентир «от … ₽ за м²», согласовать с собственником. */
+window.SITE = {
+  dirs: {
+    dom: [
+      { group: "Терраса, веранда, сад", items: [
+        { id: "verandy", t: "Веранды и террасы", d: "Дополнительная комната с видом на участок, сезон с весны до осени.", img: "r-veranda-brown-sunset", p: 8900 },
+        { id: "besedki", t: "Беседки", d: "Беседка, в которой не дует и не мочит дождь.", img: "r-gazebo", p: 8900 },
+        { id: "zimnie-sady", t: "Зимние сады и пристройки", d: "Стеклянная комната со стеклянной кровлей у дома.", img: "r-wintergarden" },
+        { id: "navesy", t: "Навесы и козырьки", d: "Алюминиевый каркас и прозрачная кровля над террасой или входом.", img: "r-canopy" },
+        { id: "portaly", t: "Раздвижные порталы", d: "Широкий выход из гостиной на террасу без высокого порога.", img: "r-terrace-door", p: 17900 }
+      ]},
+      { group: "Фасад и вход", items: [
+        { id: "panorama", t: "Панорамное остекление", d: "Окна от пола до потолка и витражи на два света.", img: "r-house-panoramic", p: 13900 },
+        { id: "dveri", t: "Входные двери", d: "Тёплая алюминиевая дверь в любом цвете RAL.", img: "r-red-door", p: 14900 },
+        { id: "tambury", t: "Тамбуры и крыльцо", d: "Тёплая буферная зона: зимой не выдувает прихожую.", img: "r-porch-brick", p: 11500 }
+      ]},
+      { group: "Внутри дома и квартиры", items: [
+        { id: "peregorodki", t: "Межкомнатные перегородки", d: "Делим кухню и гостиную, не теряя света.", img: "r-white-sliding", p: 7500 },
+        { id: "loft", t: "Лофт-перегородки", d: "Чёрная раскладка, прозрачное или рифлёное стекло.", img: "r-fluted-sliding", p: 12900 },
+        { id: "steklo-dveri", t: "Стеклянные двери", d: "Распашные и раздвижные, в тонком алюминиевом профиле.", img: "r-partition" },
+        { id: "ograzhdeniya", t: "Стеклянные ограждения", d: "Лестницы и второй свет без стоек и поручней.", img: "r-stairs" }
+      ]},
+      { group: "Ванная и баня", items: [
+        { id: "dushevye", t: "Душевые ограждения", d: "Закалённое стекло, фурнитура хром, золото или чёрная.", img: "r-shower-1" },
+        { id: "sauny", t: "Двери в сауну и хаммам", d: "Прозрачное или тонированное стекло, выдерживает жар и пар.", img: "r-sauna-home" }
+      ], note: { t: "Не нашли своё?", d: "Лоджии, гардеробные, окна в баню, нестандартные формы. Опишите задачу, подскажем.", go: "dom#dom-kviz", btn: "Описать задачу" } }
+    ],
+    biz: [
+      { group: "Снаружи здания", items: [
+        { id: "fasady", t: "Фасады и витражи", d: "Витражное остекление шоурумов, магазинов, первых этажей.", img: "c-omoda-1", p: 13900 },
+        { id: "vhodnye", t: "Входные группы", d: "Вход, который выдерживает поток и смотрится солидно.", img: "r-warehouse-entrance", p: 10900 },
+        { id: "tambury-b", t: "Тамбуры", d: "Отсекают холод в торговом зале и офисе.", img: "r-store-tambour", p: 11500 },
+        { id: "dveri-b", t: "Алюминиевые двери", d: "Для кафе, магазинов, офисов. Холодные и тёплые.", img: "r-bar-door", p: 10900 },
+        { id: "vitriny", t: "Витрины и стеклянные двери", d: "Максимум прозрачности, чтобы товар было видно с улицы.", img: "r-glass-doors-arch" }
+      ]},
+      { group: "Внутри здания", items: [
+        { id: "ofis", t: "Офисные перегородки", d: "Кабинеты и переговорные без потери света, жалюзи в стекле.", img: "r-office-pattern", p: 7500 },
+        { id: "proizv", t: "Перегородки в цехах", d: "Кабинет мастера или склад прямо в производственном зале.", img: "r-sewing-2", p: 7500 },
+        { id: "santeh", t: "Сантехнические перегородки", d: "Кабины для санузлов офисов, кафе и производств.", img: "c-trakt-1", p: 3000 },
+        { id: "spa", t: "Двери саун и SPA", d: "Для бань, аквапарков, фитнес-клубов и отелей.", img: "r-sauna-finn" },
+        { id: "protivopozh", t: "Противопожарные двери", d: "Замена и установка с документами для проверок.", img: "c-rosatom-1" }
+      ], note: { t: "Ещё делаем", d: "Замену стеклопакетов на фасадах, атриумы и стеклянные кровли, всесезонные террасы для кафе.", go: "biznes#biz-kviz", btn: "Обсудить объект" } }
+    ]
+  },
+
+  routeLinks: {
+    dom: [["verandy","Веранды"],["panorama","Панорамные окна"],["dveri","Входные двери"],["peregorodki","Перегородки"],["dushevye","Душевые"],["zimnie-sady","Зимние сады"]],
+    biz: [["fasady","Фасады"],["vhodnye","Входные группы"],["tambury-b","Тамбуры"],["ofis","Офисные перегородки"],["santeh","Сантехнические"],["protivopozh","Противопожарные"]]
+  },
+
+  prices: {
+    dom: [
+      { t: "Окна для веранд и террас", s: "Холодный профиль, глухие и распашные створки", p: 8900, img: "r-veranda-nets" },
+      { t: "Раздвижные порталы", s: "Выход на террасу, широкие створки", p: 17900, img: "r-terrace-door" },
+      { t: "Тёплые входные двери", s: "Профиль с терморазрывом, стекло или глухая", p: 14900, img: "r-red-door" },
+      { t: "Межкомнатные перегородки", s: "Матовое или прозрачное стекло", p: 7500, img: "r-white-sliding" },
+      { t: "Лофт-перегородки", s: "Чёрная раскладка, рифлёное стекло", p: 12900, img: "r-fluted-sliding" },
+      { t: "Душевые ограждения", s: "Закалённое стекло 8 мм, фурнитура", p: null, img: "r-shower-2" }
+    ],
+    biz: [
+      { t: "Фасадное остекление", s: "Тёплая стоечно-ригельная система", p: 13900, img: "c-omoda-2" },
+      { t: "Входные группы и двери", s: "Холодный профиль, доводчик", p: 10900, img: "r-office-entrance" },
+      { t: "Тамбуры", s: "Остекление и двери тамбура", p: 11500, img: "r-cafe-tambour" },
+      { t: "Офисные перегородки", s: "Одинарное или двойное остекление", p: 7500, img: "r-office-frost" },
+      { t: "Сантехнические перегородки", s: "Влагостойкие панели, нержавейка", p: 3000, img: "c-trakt-2" },
+      { t: "Противопожарные двери", s: "Сертифицированные системы", p: null, img: "c-rosatom-3" }
+    ]
+  },
+
+  examples: [
+    { t: "Остекление веранды", img: "r-veranda-build", rows: [["Размер","6 × 2,5 м"],["Площадь","15 м²"],["Профиль","холодный"]], area: 15, p: 8900 },
+    { t: "Тёплая входная дверь", img: "r-red-door", rows: [["Размер","1,0 × 2,1 м"],["Площадь","2,1 м²"],["Профиль","тёплый"]], area: 2.1, p: 14900 },
+    { t: "Перегородка в квартиру", img: "r-white-sliding", rows: [["Размер","3,0 × 2,7 м"],["Площадь","8,1 м²"],["Стекло","матовое"]], area: 8.1, p: 7500 },
+    { t: "Лофт-перегородка", img: "r-fluted-sliding", rows: [["Размер","2,4 × 2,7 м"],["Площадь","6,48 м²"],["Стекло","рифлёное"]], area: 6.48, p: 12900 }
+  ],
+
+  /* cat: dom | fasad | office | prom | spa */
+  cases: [
+    { id: "panorama", t: "Дом с остеклением на два света", type: "Частный дом", cat: "dom", imgs: ["r-house-panoramic"], did: ["Витраж на высоту двух этажей", "Входная дверь в составе витража", "Тёмный профиль в тон кровли"] },
+    { id: "veranda-sunset", t: "Остекление веранды", type: "Частный дом", cat: "dom", imgs: ["r-veranda-sunset"], did: ["Тёмный профиль в тон кирпича", "Дверь в составе остекления"] },
+    { id: "veranda-nets", t: "Веранда с москитными сетками", type: "Частный дом", cat: "dom", imgs: ["r-veranda-nets", "r-veranda-brown-sunset"], did: ["Панорамные стёкла и дверь на участок", "Плиссе-сетки от насекомых", "Коричневый профиль"] },
+    { id: "winter", t: "Зимний сад", type: "Частный дом", cat: "dom", imgs: ["r-wintergarden"], did: ["Стеклянные стены и кровля", "Дверь на участок", "Коричневый профиль"] },
+    { id: "canopy", t: "Навес над террасой", type: "Частный дом", cat: "dom", imgs: ["r-canopy"], did: ["Графитовый алюминиевый каркас", "Прозрачная кровля"] },
+    { id: "gazebo", t: "Остеклённая беседка", type: "Частный дом", cat: "dom", imgs: ["r-gazebo"], did: ["Раздвижные створки", "Глухие панели снизу", "Коричневый профиль"] },
+    { id: "showers", t: "Душевые ограждения", type: "Квартиры и дома", cat: "dom", imgs: ["r-shower-1", "r-shower-2", "r-shower-4", "r-shower-5", "r-shower-3"], did: ["Закалённое стекло", "Фурнитура хром, золото и чёрная", "Распашные двери и неподвижные экраны"] },
+    { id: "partitions", t: "Раздвижные перегородки в квартире", type: "Квартира", cat: "dom", imgs: ["r-white-sliding", "r-fluted-sliding"], did: ["Матовое и рифлёное стекло", "Белый и чёрный профиль", "Полотна на верхнем треке"] },
+    { id: "stairs", t: "Стеклянное ограждение лестницы", type: "Частный дом", cat: "dom", imgs: ["r-stairs"], did: ["Безрамное стекло на точечных креплениях", "Ограждение лестницы и второго света"] },
+    { id: "veranda-build", t: "Пристройка-веранда", type: "Частный дом", cat: "dom", imgs: ["r-veranda-build"], did: ["Крупные стеклопакеты", "Дверь на участок", "Коричневый профиль"] },
+    { id: "veranda-grey", t: "Угловая веранда", type: "Частный дом", cat: "dom", imgs: ["r-veranda-grey"], did: ["Раздвижные створки", "Серый профиль"] },
+    { id: "porch-brick", t: "Остекление крыльца", type: "Частный дом", cat: "dom", imgs: ["r-porch-brick"], did: ["Крыльцо стало закрытым тамбуром", "Коричневый профиль в цвет водостоков"] },
+    { id: "porch-snow", t: "Остекление входной зоны", type: "Частный дом", cat: "dom", imgs: ["r-porch-snow"], did: ["Раздвижные двери", "Фрамуги над створками"] },
+    { id: "reddoor", t: "Двери в цвет RAL", type: "Частный дом", cat: "dom", imgs: ["r-red-door"], did: ["Двустворчатая алюминиевая дверь", "Покраска профиля в красный"] },
+    { id: "yard", t: "Тамбур под навесом двора", type: "Частный дом", cat: "dom", imgs: ["r-tambour-yard"], did: ["Раздвижная дверь", "Защита входа от снега и ветра"] },
+    { id: "terracedoor", t: "Выход на террасу", type: "Частный дом", cat: "dom", imgs: ["r-terrace-door"], did: ["Широкая дверь и фрамуги", "Белый профиль"] },
+    { id: "sauna-home", t: "Дверь в сауну", type: "Частный дом", cat: "dom", imgs: ["r-sauna-home"], did: ["Тонированное стекло", "Алюминиевая коробка"] },
+
+    { id: "omoda", t: "Автосалон OMODA и JAECOO", type: "Фасад и тамбур", cat: "fasad", imgs: ["c-omoda-1", "c-omoda-2", "c-omoda-3"], did: ["Витражный фасад шоурума", "Входной тамбур из алюминиевого профиля", "Доставка и монтаж крупноформатных стеклопакетов"] },
+    { id: "tn", t: "Завод «Технониколь»", type: "Входная группа с тамбуром", cat: "fasad", imgs: ["r-tn-tambour", "c-tn-2", "c-tn-3", "c-tn-4"], did: ["Тамбур в два яруса с фрамугой", "Двустворчатые двери с доводчиком", "Тёмный профиль"] },
+    { id: "5ka", t: "Магазин «Пятёрочка»", type: "Входная группа и витражи", cat: "fasad", imgs: ["c-5ka-2", "c-5ka-1", "c-5ka-3"], did: ["Витражи по фасаду магазина", "Входная дверь с фрамугой", "Серебристый профиль"] },
+    { id: "shishka", t: "Крафт-бар «Большая шишка»", type: "Входная группа", cat: "fasad", imgs: ["c-shishka-1", "c-shishka-2", "c-shishka-3"], did: ["Чёрная двустворчатая дверь с фрамугой", "Длинные деревянные ручки в стиль фасада"] },
+    { id: "warehouse", t: "Складской комплекс", type: "Входная группа", cat: "fasad", imgs: ["r-warehouse-entrance"], did: ["Остеклённый тамбур входа", "Профиль в цвет фасада"] },
+    { id: "officeentr", t: "Офисное здание", type: "Входная группа и тамбур", cat: "fasad", imgs: ["r-office-entrance", "r-office-tambour"], did: ["Остеклённый тамбур", "Двустворчатая дверь", "Белый профиль"] },
+    { id: "storetambour", t: "Магазин в торговом центре", type: "Тамбур", cat: "fasad", imgs: ["r-store-tambour"], did: ["Графитовый профиль", "Двери с длинными ручками и доводчиками"] },
+    { id: "cafe", t: "Кофейня", type: "Внутренний тамбур", cat: "fasad", imgs: ["r-cafe-tambour"], did: ["Тамбур внутри зала", "Светлый профиль в тон интерьера"] },
+    { id: "bar", t: "Бар", type: "Входная дверь", cat: "fasad", imgs: ["r-bar-door"], did: ["Двустворчатая дверь в старый кирпичный проём", "Чёрный профиль, ручка из нержавейки"] },
+    { id: "bakery", t: "Пекарня", type: "Двери с фрамугой", cat: "fasad", imgs: ["r-bakery-doors"], did: ["Двустворчатые двери", "Фрамуга над дверью"] },
+    { id: "storefront", t: "Магазин", type: "Витраж и входная дверь", cat: "fasad", imgs: ["r-storefront"], did: ["Витраж на всю высоту", "Дверь с глухими панелями снизу"] },
+    { id: "archdoors", t: "Шоурум", type: "Цельностеклянные двери", cat: "fasad", imgs: ["r-glass-doors-arch"], did: ["Двери из стекла без рамы", "Длинные ручки из нержавеющей стали"] },
+    { id: "ground", t: "Первый этаж жилого комплекса", type: "Витражное остекление", cat: "fasad", imgs: ["r-ground-glazing"], did: ["Витраж на кирпичном цоколе", "Дверь в составе витража", "Графитовый профиль"] },
+    { id: "extension", t: "Пристройка к жилому дому", type: "Витражное остекление", cat: "fasad", imgs: ["r-extension"], did: ["Витраж с открывающимися створками", "Графитовый профиль"] },
+    { id: "parus", t: "ТЦ «Парус»", type: "Замена стеклопакетов", cat: "fasad", imgs: ["c-parus-1"], did: ["Замена стеклопакетов в витражах фасада", "Работа на высоте с автовышки"] },
+
+    { id: "efes", t: "Компания «Эфес»", type: "Офисные перегородки", cat: "office", imgs: ["c-efes-1"], did: ["Двойное остекление", "Жалюзи между стёклами", "Дверь в составе перегородки"] },
+    { id: "gulliver", t: "Офис «Гулливер», ТК «Лето»", type: "Перегородка с дверью", cat: "office", imgs: ["c-gulliver-1"], did: ["Перегородка на всю высоту", "Матовые полосы для приватности"] },
+    { id: "etazhi", t: "Агентство «Этажи», ул. Гончарова", type: "Стеклянные кабинеты", cat: "office", imgs: ["c-etazhi-1"], did: ["Ряд кабинетов вдоль коридора", "Прозрачное стекло, светлый профиль"] },
+    { id: "agro", t: "Агророс банк", type: "Перегородки и кассовая зона", cat: "office", imgs: ["c-agro-1", "c-agro-2", "c-agro-3"], did: ["Матовое стекло для приватности", "Дверь в кассу", "Кабинеты с дверями"] },
+    { id: "angar", t: "«Ангар 24»", type: "Лофт-перегородка", cat: "office", imgs: ["c-angar-1", "c-angar-2"], did: ["Чёрная раскладка в стиле лофт", "Отделили рабочее место от торгового зала"] },
+    { id: "officefrost", t: "Офисное помещение", type: "Кабинеты с матовым стеклом", cat: "office", imgs: ["r-office-frost"], did: ["Матовое стекло на всю высоту", "Тёмный профиль"] },
+    { id: "officepattern", t: "Коридор с кабинетами", type: "Перегородка с рисунком на стекле", cat: "office", imgs: ["r-office-pattern"], did: ["Декоративное матирование", "Дверь и фрамуга в составе перегородки"] },
+
+    { id: "sewing", t: "Швейное производство", type: "Перегородки в цехе", cat: "prom", imgs: ["r-sewing-2", "r-sewing-1"], did: ["Кабинет внутри цеха", "Матовое заполнение внизу, прозрачное сверху"] },
+    { id: "trakt", t: "Завод «Тракт»", type: "Сантехнические перегородки", cat: "prom", imgs: ["c-trakt-1", "c-trakt-2", "c-trakt-3"], did: ["Ряд кабин в санузле", "Влагостойкие панели и опоры из нержавейки"] },
+    { id: "rosatom", t: "«Росатом»", type: "Замена противопожарных дверей", cat: "prom", imgs: ["c-rosatom-1", "c-rosatom-2", "c-rosatom-3"], did: ["Одно- и двустворчатые противопожарные двери", "Дверь со смотровым окном"] },
+
+    { id: "ulet", t: "Аквапарк «Улёт»", type: "Двери финской сауны и турецкой бани", cat: "spa", imgs: ["r-sauna-finn", "c-ulet-1", "c-ulet-2", "c-ulet-4"], did: ["Стеклянные двери в алюминиевой коробке", "Тонированное и прозрачное стекло"] },
+    { id: "usadba", t: "Сауна «Усадьба»", type: "Арочная дверь хаммама", cat: "spa", imgs: ["r-hammam", "c-usadba-2", "c-usadba-3"], did: ["Стекло по форме арки", "Матовая перегородка душевой зоны"] },
+    { id: "tsar", t: "«Царская усадьба»", type: "Замена стекла у бассейна", cat: "spa", imgs: ["c-tsar-1", "c-tsar-2"], did: ["Замена стеклянных панелей в зоне купели"] }
+  ],
+
+  catNames: { dom: "Для дома", fasad: "Фасады и входы", office: "Офисы", prom: "Производства", spa: "Бани и SPA" },
+
+  faq: {
+    dom: [
+      ["Чем алюминий лучше пластика для веранды?", "Алюминий прочнее, поэтому профиль тоньше, а створки могут быть больше. Больше стекла, больше света, конструкция не ведёт от перепадов температуры."],
+      ["Тёплый или холодный профиль?", "Холодный подходит для веранд и беседок, где зимой не топят. Тёплый с терморазрывом нужен для жилых помещений и входных дверей."],
+      ["Можно в цвет фасада?", "Да. Покрасим профиль в любой цвет по каталогу RAL или сделаем под дерево."],
+      ["Что входит в цену?", "Конструкция, стекло, фурнитура и монтаж. В расчёте показываем каждую позицию отдельно."],
+      ["Работаете в области?", "Да, по всей Ульяновской области. Стоимость выезда назовём при расчёте."]
+    ],
+    biz: [
+      ["Работаете с юрлицами и по безналу?", "Да, работаем по договору, выдаём закрывающие документы."],
+      ["Считаете по нашему проекту?", "Да. Пришлите чертежи или ведомость, подберём систему и посчитаем смету по позициям."],
+      ["Делаете противопожарные конструкции?", "Да, двери и перегородки с сертификатами, которые требуют проверки."],
+      ["Можно в фирменный цвет?", "Да, профиль красим в любой цвет RAL."]
+    ]
+  },
+
+  quizzes: {
+    dom: {
+      gift: "Каталог цветов и дизайнов", giftImg: "r-fluted-sliding",
+      what: "каталог цветов и дизайнов, три похожих объекта и ориентир цены",
+      steps: [
+        { q: "Что хотите сделать?", hint: "Можно выбрать несколько", multi: true, key: "Что нужно", opts: [
+          { t: "Веранда или терраса", img: "r-veranda-brown-sunset" }, { t: "Панорамные окна", img: "r-house-panoramic" },
+          { t: "Входная дверь или тамбур", img: "r-red-door" }, { t: "Перегородки и двери", img: "r-white-sliding" },
+          { t: "Душевая или сауна", img: "r-shower-1" }, { t: "Свой вариант", other: true } ] },
+        { q: "Где объект?", key: "Район", opts: ["Новый город","Верхняя терраса","Киндяковка","Центр","Засвияжье","Север","Ульяновская область","Другой город"].map(t => ({ t })) },
+        { q: "Когда планируете?", key: "Сроки", opts: ["В ближайший месяц","Через 1–3 месяца","Пока присматриваюсь"].map(t => ({ t })) },
+        { q: "Куда прислать каталог?", key: "Канал", opts: ["Telegram","MAX","WhatsApp","SMS","E-mail"].map(t => ({ t })) }
+      ],
+      fields: [["name","Имя","text",false],["phone","Телефон","tel",true],["email","E-mail","email",false]]
+    },
+    biz: {
+      gift: "Каталог конструкций", giftImg: "r-store-tambour",
+      what: "каталог конструкций, примеры похожих объектов и план расчёта",
+      steps: [
+        { q: "Какой объект?", key: "Объект", opts: ["Офис или бизнес-центр","Магазин или ТЦ","Кафе или ресторан","Производство или склад","Жилой комплекс","Другое"].map(t => ({ t })) },
+        { q: "Что требуется?", hint: "Можно выбрать несколько", multi: true, key: "Что нужно", opts: [
+          { t: "Фасад или витражи", img: "c-omoda-1" }, { t: "Входная группа или тамбур", img: "r-tn-tambour" },
+          { t: "Офисные перегородки", img: "c-efes-1" }, { t: "Сантехнические перегородки", img: "c-trakt-1" },
+          { t: "Двери саун и SPA", img: "r-sauna-finn" }, { t: "Противопожарные двери", img: "c-rosatom-1" } ] },
+        { q: "На каком этапе проект?", key: "Этап", opts: ["Идея, нужен совет","Есть проект или чертежи","Нужен расчёт","Готовы к монтажу"].map(t => ({ t })) },
+        { q: "Когда нужен монтаж?", key: "Сроки", opts: ["В течение месяца","Через 1–3 месяца","Позже"].map(t => ({ t })) }
+      ],
+      fields: [["name","Имя","text",false],["company","Компания","text",false],["phone","Телефон","tel",true],["email","E-mail","email",false],["comment","Ссылка на проект или комментарий","text",false,true]]
+    },
+    partner: {
+      gift: "Каталог для партнёров", giftImg: "r-office-pattern",
+      what: "каталог конструкций и узлов, примеры решений и условия сотрудничества",
+      steps: [
+        { q: "Ваша роль?", key: "Роль", opts: ["Дизайнер интерьера","Архитектор","Застройщик","Подрядчик","Дилер","Другое"].map(t => ({ t })) },
+        { q: "Что нужно сейчас?", hint: "Можно выбрать несколько", multi: true, key: "Что нужно", opts: ["Подбор системы","Расчёт по проекту","Производство","Монтаж","Материалы для презентации клиенту"].map(t => ({ t })) },
+        { q: "Что прислать первым?", key: "Прислать", opts: ["Каталог конструкций и узлов","Примеры решений","Условия сотрудничества","Контакт технолога"].map(t => ({ t })) }
+      ],
+      fields: [["name","Имя","text",false],["company","Студия или компания","text",false],["phone","Телефон или e-mail","text",true],["comment","Ссылка на проект","text",false,true]]
+    }
+  }
+};
+
+</script>
+<script>
+(function () {
+  "use strict";
+  var S = window.SITE;
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var img = function (n) { return "img/" + n + ".webp"; };
+  var rub = function (n) { return Math.round(n).toLocaleString("ru-RU").replace(/,/g, " ") + " ₽"; };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var PAGES = ["home", "dom", "biznes", "partneram", "o-nas", "politika"];
+  var KVIZ = { home: "home-kviz", dom: "dom-kviz", biznes: "biz-kviz", partneram: "p-kviz", "o-nas": "home-kviz", politika: "home-kviz" };
+
+  /* ---------- lead storage ---------- */
+  var dbPromise = null;
+  function getDb() {
+    if (!dbPromise) {
+      try { if (window.claude && window.claude.use) dbPromise = window.claude.use("db"); } catch (e) { dbPromise = null; }
+    }
+    return dbPromise;
+  }
+  setTimeout(getDb, 0);
+  function saveLead(data) {
+    data.createdAt = new Date().toISOString();
+    data.status = "Новая";
+    data.page = currentPage;
+    getDb();
+    if (!dbPromise) return Promise.resolve(false);
+    return Promise.race([
+      dbPromise.then(function (db) {
+        if (!db) return false;
+        return db.collection("leads").add(data).then(function () { return true; });
+      }),
+      new Promise(function (r) { setTimeout(function () { r(false); }, 12000); })
+    ]).catch(function () { return false; });
+  }
+  var DEMO_NOTE = "Сайт открыт в режиме просмотра, поэтому заявка не ушла менеджеру. На рабочем сайте она попадёт в таблицу заявок.";
+
+  /* ---------- router ---------- */
+  var currentPage = "home";
+  function show(page, anchor) {
+    if (PAGES.indexOf(page) < 0) page = "home";
+    var changed = page !== currentPage || !document.body.dataset.page;
+    currentPage = page;
+    document.body.dataset.page = page;
+    $$(".page").forEach(function (p) { p.hidden = p.dataset.page !== page; });
+    $$("[data-nav]").forEach(function (a) {
+      var on = a.dataset.nav === page;
+      if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    var sec = $('.page[data-page="' + page + '"]');
+    if (sec && sec.dataset.title) document.title = sec.dataset.title;
+    closeMenu();
+    if (anchor) {
+      setTimeout(function () { scrollToEl(document.getElementById(anchor)); }, 30);
+    } else if (changed) {
+      scrollToY(0);
+    }
+  }
+  /* scrolling that survives embedded viewers: try window, the scrolling element, then scrollIntoView */
+  function scrollToY(y) {
+    try { window.scrollTo(0, y); } catch (e) {}
+    var se = document.scrollingElement || document.documentElement;
+    try { se.scrollTop = y; } catch (e) {}
+    try { document.body.scrollTop = y; } catch (e) {}
+  }
+  function scrollToEl(el) {
+    if (!el) return;
+    var hdr = document.querySelector(".hdr");
+    var off = (hdr ? hdr.offsetHeight : 0) + 8;
+    var y = el.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop || 0) - off;
+    var before = el.getBoundingClientRect().top;
+    scrollToY(Math.max(0, y));
+    setTimeout(function () {
+      if (Math.abs(el.getBoundingClientRect().top - before) < 2 && Math.abs(before - off) > 4) {
+        try { el.scrollIntoView(true); } catch (e) {}
+      }
+    }, 120);
+  }
+  function fromHash() { return (location.hash || "#home").slice(1) || "home"; }
+  window.addEventListener("hashchange", function () { show(fromHash()); });
+
+  function go(target) {
+    // "page#anchor", "@kviz" = quiz of current page
+    if (target === "@kviz") target = currentPage + "#" + KVIZ[currentPage];
+    var parts = target.split("#"), page = parts[0], anchor = parts[1];
+    if (page !== currentPage) {
+      try { history.pushState(null, "", "#" + page); } catch (e) { /* sandboxed viewer: keep routing in memory */ }
+    }
+    show(page, anchor);
+  }
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-go]");
+    if (t) { e.preventDefault(); go(t.dataset.go); return; }
+    var a = e.target.closest('a[href^="#"]');
+    if (a) {
+      var h = a.getAttribute("href").slice(1);
+      if (PAGES.indexOf(h) > -1) { e.preventDefault(); go(h); }
+    }
+  });
+
+  /* ---------- mobile menu ---------- */
+  var burger = $(".burger"), nav = $("#nav");
+  function closeMenu() { nav.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); }
+  burger.addEventListener("click", function () {
+    var open = !nav.classList.contains("open");
+    nav.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", String(open));
+  });
+
+  /* ---------- renderers ---------- */
+  function renderDirs(el) {
+    var seg = el.dataset.seg, pg = seg === "dom" ? "dom" : "biznes";
+    el.innerHTML = S.dirs[seg].map(function (g) {
+      var cards = g.items.map(function (d) {
+        return '<article class="dir" id="dir-' + d.id + '"><img src="' + img(d.img) + '" alt="' + esc(d.t) + '" loading="lazy">' +
+          '<div class="dir-b"><h4>' + esc(d.t) + '</h4><p>' + esc(d.d) + '</p><span class="val">' + (d.p ? "от " + rub(d.p) + " за м²" : "Цена по расчёту") + '</span></div></article>';
+      }).join("");
+      var note = g.note ? '<div class="dir-note dir-note-wide"><div><h4>' + esc(g.note.t) + '</h4><p>' + esc(g.note.d) + '</p></div><button class="btn btn-light btn-sm" type="button" data-go="' + g.note.go + '">' + esc(g.note.btn) + '</button></div>' : "";
+      return '<div class="dir-group"><h3>' + esc(g.group) + '</h3><div class="dir-grid">' + cards + '</div>' + note + '</div>';
+    }).join("");
+  }
+  function renderRouteLinks(el) {
+    var seg = el.dataset.seg, pg = seg === "dom" ? "dom" : "biznes";
+    el.innerHTML = S.routeLinks[seg].map(function (l) {
+      return '<li><a href="#' + pg + '" data-go="' + pg + '#dir-' + l[0] + '" data-flash="dir-' + l[0] + '">' + esc(l[1]) + '</a></li>';
+    }).join("");
+  }
+  function renderPrices(el, seg) {
+    seg = seg || el.dataset.seg;
+    el.innerHTML = S.prices[seg].map(function (p) {
+      return '<article class="price"><img src="' + img(p.img) + '" alt="" loading="lazy"><div class="price-b"><h3>' + esc(p.t) + '</h3><small>' + esc(p.s) + '</small>' +
+        '<p class="val">' + (p.p ? "от " + rub(p.p) + ' <span>за м²</span>' : '<span>по замеру</span>') + '</p></div></article>';
+    }).join("");
+  }
+  function renderExamples(el) {
+    el.innerHTML = S.examples.map(function (x) {
+      return '<article class="ex"><img src="' + img(x.img) + '" alt="' + esc(x.t) + '" loading="lazy"><div class="ex-b"><h3>' + esc(x.t) + '</h3><dl>' +
+        x.rows.map(function (r) { return "<dt>" + esc(r[0]) + "</dt><dd>" + esc(r[1]) + "</dd>"; }).join("") +
+        '<dt>Цена за м²</dt><dd>от ' + rub(x.p) + '</dd></dl><p class="val">от ' + rub(x.area * x.p) + '</p></div></article>';
+    }).join("");
+  }
+  function renderFaq(el) {
+    el.innerHTML = S.faq[el.dataset.seg].map(function (f) {
+      return "<details><summary>" + esc(f[0]) + "</summary><p>" + esc(f[1]) + "</p></details>";
+    }).join("");
+  }
+
+  /* cases */
+  function scopeCases(scope) {
+    return S.cases.filter(function (c) {
+      if (scope === "dom") return c.cat === "dom" || c.cat === "spa";
+      if (scope === "biz") return c.cat !== "dom";
+      return true;
+    });
+  }
+  function caseCard(c) {
+    return '<button class="case" type="button" data-case="' + c.id + '"><span class="case-img"><img src="' + img(c.imgs[0]) + '" alt="' + esc(c.t + ", " + c.type) + '" loading="lazy"></span>' +
+      '<span class="case-b"><h3>' + esc(c.t) + '</h3><p>' + esc(c.type) + '</p><span class="open">' + (c.imgs.length > 1 ? c.imgs.length + " фото" : "Подробнее") + '</span></span></button>';
+  }
+  function renderCases(el) {
+    var list = scopeCases(el.dataset.scope);
+    var f = el.dataset.filter;
+    if (f && f !== "all") list = list.filter(function (c) { return c.cat === f; });
+    var lim = parseInt(el.dataset.limit || "9", 10);
+    var expanded = el.dataset.expanded === "1";
+    el.innerHTML = (expanded ? list : list.slice(0, lim)).map(caseCard).join("");
+    var more = el.parentElement.querySelector("[data-more]");
+    if (more) more.hidden = expanded || list.length <= lim;
+  }
+  function renderFilters(el) {
+    var scope = el.dataset.filters === "home" ? "all" : "biz";
+    var cats = scope === "all" ? ["dom", "fasad", "office", "prom", "spa"] : ["fasad", "office", "prom", "spa"];
+    el.innerHTML = '<button type="button" aria-pressed="true" data-f="all">Все</button>' + cats.map(function (c) {
+      return '<button type="button" aria-pressed="false" data-f="' + c + '">' + S.catNames[c] + "</button>";
+    }).join("");
+    el.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-f]"); if (!b) return;
+      $$("button", el).forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      var grid = el.parentElement.querySelector(".cases");
+      grid.dataset.filter = b.dataset.f; grid.dataset.expanded = "0"; renderCases(grid);
+    });
+  }
+
+  /* case modal */
+  var modal = $("#caseModal");
+  function openCase(id) {
+    var c = S.cases.find(function (x) { return x.id === id; }); if (!c) return;
+    $("#cm-title").textContent = c.t;
+    $("#cm-type").textContent = c.type;
+    $("#cm-did").innerHTML = c.did.map(function (d) { return "<li>" + esc(d) + "</li>"; }).join("");
+    var main = $("#cm-img");
+    function pick(i) {
+      main.src = img(c.imgs[i]); main.alt = c.t + ", фото " + (i + 1);
+      $$("#cm-thumbs button").forEach(function (b, j) { b.setAttribute("aria-current", String(i === j)); });
+    }
+    $("#cm-thumbs").innerHTML = c.imgs.length > 1 ? c.imgs.map(function (s, i) {
+      return '<button type="button" aria-label="Фото ' + (i + 1) + '"><img src="' + img(s) + '" alt=""></button>';
+    }).join("") : "";
+    $$("#cm-thumbs button").forEach(function (b, i) { b.addEventListener("click", function () { pick(i); }); });
+    pick(0);
+    $("#cm-cta").onclick = function () {
+      modal.close();
+      go(c.cat === "dom" ? "dom#dom-kviz" : (currentPage === "home" ? "home#home-kviz" : "@kviz"));
+    };
+    if (modal.showModal) modal.showModal(); else modal.setAttribute("open", "");
+  }
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal || e.target.closest("[data-close]")) modal.close();
+  });
+  document.addEventListener("click", function (e) {
+    var c = e.target.closest("[data-case]"); if (c) openCase(c.dataset.case);
+    var m = e.target.closest("[data-more]");
+    if (m) { var g = m.closest(".wrap").querySelector(".cases"); g.dataset.expanded = "1"; renderCases(g); }
+    var fl = e.target.closest("[data-flash]");
+    if (fl) setTimeout(function () { var d = document.getElementById(fl.dataset.flash); if (d) { d.classList.remove("flash"); void d.offsetWidth; d.classList.add("flash"); } }, 350);
+  });
+
+  /* tabs (prices on home) */
+  $$(".tabs").forEach(function (tabs) {
+    tabs.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-tab]"); if (!b) return;
+      $$("[data-tab]", tabs).forEach(function (x) { x.setAttribute("aria-selected", String(x === b)); });
+      renderPrices(tabs.parentElement.querySelector(".price-grid"), b.dataset.tab);
+    });
+  });
+
+  /* ---------- phone helpers ---------- */
+  function phoneOk(v) { return (v.replace(/\D/g, "").length >= 10); }
+  function emailOk(v) { return /.+@.+\..+/.test(v); }
+  function contactOk(v) { return phoneOk(v) || emailOk(v); }
+
+  /* ---------- soft forms ---------- */
+  $$(".soft-form").forEach(function (f) {
+    var msg = $(".form-msg", f);
+    f.addEventListener("input", function (e) { e.target.classList.remove("err"); msg.textContent = ""; msg.className = "form-msg"; });
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var ph = f.elements.phone, cons = f.elements.consent;
+      var okPhone = ph.type === "tel" ? phoneOk(ph.value) : contactOk(ph.value);
+      if (!okPhone) { ph.classList.add("err"); msg.className = "form-msg bad"; msg.textContent = "Укажите телефон: не меньше 10 цифр."; ph.focus(); return; }
+      if (!cons.checked) { msg.className = "form-msg bad"; msg.textContent = "Отметьте согласие на обработку данных, без него не сможем связаться."; return; }
+      var data = { source: f.dataset.src };
+      $$("input,select", f).forEach(function (i) { if (i.name && i.name !== "consent" && i.value) data[i.name] = i.value; });
+      var btn = $("button[type=submit]", f); btn.disabled = true; var txt = btn.textContent; btn.textContent = "Отправляем…";
+      saveLead(data).then(function (ok) {
+        btn.disabled = false; btn.textContent = txt;
+        msg.className = "form-msg ok";
+        msg.textContent = ok ? "Готово. Менеджер напишет вам в рабочее время." : DEMO_NOTE;
+        if (ok) f.reset();
+      });
+    });
+  });
+
+  /* ---------- quizzes ---------- */
+  function Quiz(el, key) {
+    this.el = el; this.root = key; this.reset(key);
+  }
+  Quiz.prototype.reset = function (key) {
+    this.key = key; this.step = 0; this.ans = {}; this.other = "";
+    this.cfg = key === "main" ? null : S.quizzes[key];
+    this.render();
+  };
+  Quiz.prototype.total = function () { return this.cfg.steps.length + 1; };
+  Quiz.prototype.render = function () {
+    var q = this, el = this.el;
+    if (!q.cfg) {
+      el.innerHTML = '<div class="q-top"><span>Шаг 1</span><span>Около минуты</span></div><div class="q-bar"><i style="width:8%"></i></div>' +
+        '<p class="q-title">Для чего подбираем решение?</p><div class="q-opts">' +
+        [["dom", "Для дома или квартиры", "r-veranda-sunset"], ["biz", "Для бизнеса", "c-omoda-1"], ["partner", "Я дизайнер, архитектор или застройщик", "r-hammam"]].map(function (o) {
+          return '<button class="q-opt single" type="button" data-pick="' + o[0] + '" aria-pressed="false"><img src="' + img(o[2]) + '" alt="" loading="lazy"><span>' + o[1] + "</span></button>";
+        }).join("") + "</div>";
+      $$("[data-pick]", el).forEach(function (b) { b.addEventListener("click", function () { q.cfg = S.quizzes[b.dataset.pick]; q.key = b.dataset.pick; q.step = 0; q.render(); }); });
+      return;
+    }
+    var n = q.total(), cur = q.step;
+    var head = '<div class="q-top"><span>Шаг ' + (cur + 1) + " из " + n + '</span><span>' + esc(q.cfg.gift) + '</span></div><div class="q-bar"><i style="width:' + Math.round(((cur + 1) / n) * 100) + '%"></i></div>';
+    if (cur < q.cfg.steps.length) {
+      var s = q.cfg.steps[cur], sel = q.ans[s.key] || [];
+      el.innerHTML = head + '<p class="q-title">' + esc(s.q) + "</p>" + (s.hint ? '<p class="q-hint">' + esc(s.hint) + "</p>" : "") +
+        '<div class="q-opts">' + s.opts.map(function (o, i) {
+          return '<button class="q-opt' + (s.multi ? "" : " single") + '" type="button" data-i="' + i + '" aria-pressed="' + (sel.indexOf(o.t) > -1) + '">' +
+            (o.img ? '<img src="' + img(o.img) + '" alt="" loading="lazy">' : "") + "<span>" + esc(o.t) + "</span></button>";
+        }).join("") + "</div>" +
+        '<div class="q-other fld" ' + (sel.indexOf("Свой вариант") > -1 ? "" : "hidden") + '><label for="q-other-' + q.root + '">Опишите, что нужно</label><input id="q-other-' + q.root + '" type="text" value="' + esc(q.other) + '"></div>' +
+        '<p class="q-err" role="alert"></p><div class="q-nav">' +
+        (cur > 0 || q.root === "main" ? '<button class="btn btn-ghost" type="button" data-back>Назад</button>' : "<span></span>") +
+        '<button class="btn" type="button" data-next>Дальше</button></div>';
+      var err = $(".q-err", el), otherBox = $(".q-other", el);
+      $$("[data-i]", el).forEach(function (b) {
+        b.addEventListener("click", function () {
+          var o = s.opts[+b.dataset.i], list = q.ans[s.key] || [];
+          if (s.multi) {
+            var k = list.indexOf(o.t);
+            if (k > -1) list.splice(k, 1); else list.push(o.t);
+          } else list = [o.t];
+          q.ans[s.key] = list; err.textContent = "";
+          $$("[data-i]", el).forEach(function (x) { x.setAttribute("aria-pressed", String(list.indexOf(s.opts[+x.dataset.i].t) > -1)); });
+          if (otherBox) otherBox.hidden = list.indexOf("Свой вариант") < 0;
+          if (!s.multi) setTimeout(function () { q.step++; q.render(); }, 180);
+        });
+      });
+      var oi = $("input", otherBox); if (oi) oi.addEventListener("input", function () { q.other = oi.value; err.textContent = ""; });
+      $("[data-next]", el).addEventListener("click", function () {
+        var list = q.ans[s.key] || [];
+        if (!list.length) { err.textContent = "Выберите вариант, чтобы продолжить."; return; }
+        if (list.indexOf("Свой вариант") > -1 && !q.other.trim()) { err.textContent = "Опишите свой вариант в поле ниже."; oi && oi.focus(); return; }
+        q.step++; q.render();
+      });
+      var back = $("[data-back]", el);
+      if (back) back.addEventListener("click", function () {
+        if (cur === 0) { q.cfg = null; q.render(); } else { q.step--; q.render(); }
+      });
+      return;
+    }
+    // contacts step
+    var c = q.cfg;
+    el.innerHTML = head + '<p class="q-title">Куда отправить материалы?</p>' +
+      '<div class="q-gift"><img src="' + img(c.giftImg) + '" alt=""><p>Пришлём: ' + esc(c.what) + ". Менеджер свяжется и ответит на вопросы, без навязчивых звонков.</p></div>" +
+      '<form class="q-form" novalidate>' + c.fields.map(function (f) {
+        var id = "qf-" + q.root + "-" + f[0];
+        return '<div class="fld' + (f[4] ? " fld-wide" : "") + '"><label for="' + id + '">' + esc(f[1]) + (f[3] ? "" : " (необязательно)") + '</label><input id="' + id + '" name="' + f[0] + '" type="' + f[2] + '"' + (f[2] === "tel" ? ' inputmode="tel" autocomplete="tel"' : "") + (f[0] === "name" ? ' autocomplete="name"' : "") + "></div>";
+      }).join("") +
+      '<label class="consent"><input type="checkbox" name="consent"> Согласен на обработку данных по <a href="#politika">политике</a></label>' +
+      '<p class="q-err" role="alert" style="grid-column:1/-1"></p>' +
+      '<div class="q-nav" style="grid-column:1/-1"><button class="btn btn-ghost" type="button" data-back>Назад</button><button class="btn" type="submit">Получить ' + esc(c.gift.toLowerCase()) + "</button></div></form>";
+    var form = $("form", el), err2 = $(".q-err", el);
+    $("[data-back]", el).addEventListener("click", function () { q.step--; q.render(); });
+    form.addEventListener("input", function (e) { e.target.classList && e.target.classList.remove("err"); err2.textContent = ""; });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var ph = form.elements.phone;
+      var good = ph.type === "tel" ? phoneOk(ph.value) : contactOk(ph.value);
+      if (!good) { ph.classList.add("err"); err2.textContent = ph.type === "tel" ? "Укажите телефон: не меньше 10 цифр." : "Укажите телефон или e-mail."; ph.focus(); return; }
+      if (form.elements.email && form.elements.email.value && !emailOk(form.elements.email.value)) { form.elements.email.classList.add("err"); err2.textContent = "Проверьте e-mail: в нём должна быть @ и домен."; return; }
+      if (!form.elements.consent.checked) { err2.textContent = "Отметьте согласие на обработку данных."; return; }
+      var data = { source: "Квиз: " + c.gift, answers: {} };
+      Object.keys(q.ans).forEach(function (k) { data.answers[k] = q.ans[k].join(", "); });
+      if (q.other) data.answers["Свой вариант"] = q.other;
+      $$("input", form).forEach(function (i) { if (i.name && i.name !== "consent" && i.value) data[i.name] = i.value; });
+      var btn = $("button[type=submit]", form); btn.disabled = true; btn.textContent = "Отправляем…";
+      saveLead(data).then(function (ok) {
+        var name = data.name ? ", " + esc(data.name) : "";
+        var ch = (q.ans["Канал"] || [])[0];
+        el.innerHTML = '<div class="q-done"><h3>Спасибо' + name + "</h3><p>" +
+          (ok ? "Заявка у нас. Пришлём " + esc(c.what) + (ch ? " в " + esc(ch) : "") + " в рабочее время." : esc(DEMO_NOTE)) +
+          '</p><div class="q-nav"><button class="btn btn-ghost" type="button" data-again>Пройти ещё раз</button></div></div>';
+        $("[data-again]", el).addEventListener("click", function () { q.reset(q.root); });
+      });
+    });
+  };
+
+  /* ---------- init ---------- */
+  $$('[data-render="dirs"]').forEach(renderDirs);
+  $$('[data-render="route-links"]').forEach(renderRouteLinks);
+  $$('[data-render="prices"]').forEach(function (el) { renderPrices(el); });
+  $$('[data-render="examples"]').forEach(renderExamples);
+  $$('[data-render="faq"]').forEach(renderFaq);
+  $$("[data-filters]").forEach(renderFilters);
+  $$('[data-render="cases"]').forEach(renderCases);
+  $$("[data-quiz]").forEach(function (el) { new Quiz(el, el.dataset.quiz); });
+  show(fromHash());
+  var mbar = $(".mbar");
+  if (mbar && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) {
+      var anyHero = es.some(function (e) { return e.isIntersecting; });
+      mbar.classList.toggle("on", !anyHero);
+    });
+    $$(".hero").forEach(function (h) { io.observe(h); });
+  } else if (mbar) mbar.classList.add("on");
+})();
+
+</script>
+
+</body>
+</html>
